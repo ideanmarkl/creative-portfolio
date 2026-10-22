@@ -1,0 +1,1181 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barrio&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=La+Belle+Aurore&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.site-section {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/*SECTION 1 HOMEPAGE*/
+
+#homepage {
+  background-repeat: no-repeat;                      
+  background-position: center;                        
+  background-size: cover;                             
+  background-color: var(--Dark-Blue, #086288);      
+  position: relative;
+}
+
+.content {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  min-height: 100vh;
+  padding: 25px;
+
+}
+
+/* Flexbox container locking both items on the exact same Y-axis */
+.home-header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;        /* Places logo and nav side-by-side */
+  align-items: center;        /* Locks both items to the EXACT same Y-axis center line */
+  justify-content: space-between; /* Pushes logo left and nav bar right */
+}
+
+/* Logo styling */
+.logo {
+  align-self: flex-start; /* Keeps it strictly in top-left placement */
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none; /* Removes hyperlink underline */
+  cursor: pointer;
+}
+
+.logo-text {
+  color: var(--Beige, #FFEFC4);
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  -webkit-text-stroke-color: var(--Darkest-Blue, #013C55);
+  font-family: "Caveat", cursive, sans-serif !important;  font-size: 50px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.logo-text::before {
+  content: attr(data-text);
+  position: absolute;
+  z-index: -1; 
+  -webkit-text-stroke: 4px var(--Darkest-Blue, #013C55); /* The thick outline */
+  color: transparent; 
+}
+
+.logo-icon {
+  width: 50px;
+  height: 50px; 
+}
+
+/* Nav bar styling */
+.portfolio-bar {
+  display: flex;
+  width: 600px;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  background: var(--linear-dbb, linear-gradient(180deg, var(--Blue, #4D8DBA) 0%, var(--Dark-Blue, #086288) 100%));
+  border: 1px solid var(--Darkest-Blue, #013C55);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+
+}
+
+.bar-item {
+  color: var(--Beige, #FFEFC4);
+  font-family: "Arial Narrow" !important;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration: none;
+}
+
+.hero-details{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1000px; /* Adjust based on your wrapper */
+  margin: 0 auto;
+  padding: 25px 25px;
+  gap: 50px;
+}
+
+/* =========================================
+   LEFT COLUMN: TEXT & BUTTONS
+========================================= */
+.hero-text-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 25px; 
+  width: fit-content;
+  
+}
+
+.intro-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 0.9;
+}
+
+.welcome, .space {
+  color: var(--Beige, #FFEFC4);
+  font-family: "Caveat", cursive, sans-serif;
+  font-size: 50px;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.main-title {
+  color: var(--Beige, #FFEFC4);
+  font-family: "Arial Narrow" !important; 
+  font-size: 90px;
+  font-weight: bold;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  -webkit-text-stroke-color: var(--Darkest-Blue, #013C55);
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  
+}
+
+.main-title::before {
+  content: attr(data-text);
+  position: absolute;
+  z-index: -1; 
+  -webkit-text-stroke: 4px var(--Darkest-Blue, #013C55); /* The thick outline */
+  color: transparent; 
+}
+
+.space {
+  align-self: flex-end;
+}
+
+/* The role banner */
+.role-banner {
+  background: var(--linear-dbb, linear-gradient(180deg, var(--Blue, #4D8DBA) 0%, var(--Dark-Blue, #086288) 100%));
+  border: 1px solid var(--Darkest-Blue, #013C55);
+  box-sizing: border-box;
+  text-align: center;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  padding: 10px;
+}
+
+.role-banner h2 {
+  color: var(--Beige, #FFEFC4);
+  font-family: "Barrio" !important;
+  font-size: 35px;
+  font-weight: normal;
+}
+
+/* Buttons */
+.action-buttons {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+}
+
+.btn {
+  background: var(--linear-dbb, linear-gradient(180deg, var(--Blue, #4D8DBA) 0%, var(--Dark-Blue, #086288) 100%));
+  border: 1px solid var(--Darkest-Blue, #013C55);
+  border-radius: 25px; 
+  color: var(--Beige, #FFEFC4);
+  font-family: "Arial Narrow" !important;
+  font-size: 25px;
+  text-decoration: none;
+  padding: 10px 30px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* =========================================
+   RIGHT COLUMN: SCRAPBOOK COLLAGE
+========================================= */
+.hero-collage {
+  flex: 1;
+  position: relative; 
+  min-height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Base styles for all layered items */
+.hero-collage .photo,
+.hero-collage .deco {
+  position: absolute;
+}
+
+
+.photo-top {
+  top: 15%;
+  left: 15%;
+  transform: rotate(3deg);
+  z-index: 1;
+  border: 5px solid var(--Beige, #FFEFC4);
+  box-shadow: 2px 4px 8px rgba(0,0,0,0.3);
+  width: 400px;
+  height: auto;
+}
+
+.photo-bottom {
+  bottom: 7%;
+  left: 30%;
+  transform: rotate(-3deg);
+  z-index: 2;
+  border: 5px solid var(--Beige, #FFEFC4);
+  box-shadow: 2px 4px 8px rgba(0,0,0,0.3);
+  width: 400px;
+  height: auto;
+}
+
+/* Decorations */
+.deco-clip {
+  width: 125px;
+  top: 0.1%;
+  left: 40%;
+  z-index: 3;
+  position: fixed;
+}
+
+.deco-blflowers-la {
+  width: 180px;
+  top: 35%;
+  left: 0%;
+  z-index: 5;
+  position: absolute;
+}
+
+.deco-blflowers-lb {
+  width: 175px;
+  top: 43%;
+  left: 10%;
+  z-index: 4;
+  position: absolute;
+}
+
+.deco-beflowers-la {
+  width: 110px;
+  top: 55%;
+  left: 0%;
+  z-index: 7;
+  position: absolute;
+}
+
+.deco-beflowers-lb {
+  width: 100px;
+  top: 60%;
+  left: 10%;
+  z-index: 6;
+  position: absolute;
+}
+
+.deco-blflowers-ra {
+  width: 175px;
+  top: 28%;
+  right: -25%;
+  z-index: 5;
+  position: absolute;
+}
+
+.deco-blflowers-rb {
+  width: 215px;
+  top: 7%;
+  right: -25%;
+  z-index: 4;
+  position: absolute;
+}
+
+.deco-beflowers-ra {
+  width: 110px;
+  top: 18%;
+  right: -28%;
+  z-index: 7;
+  position: absolute;
+}
+
+.deco-beflowers-rb {
+  width: 100px;
+  top: 26%;
+  right: -30%;
+  z-index: 6;
+  position: absolute;
+}
+
+.deco-tape-blue {
+  width: 150px;
+  bottom: 1%;
+  left: 18%;
+  z-index: 3;
+  transform: rotate(5deg);
+  position: fixed;
+}
+
+.deco-tape-yellow {
+  width: 150px;
+  bottom: 3%;
+  right: -30%;
+  z-index: 3;
+  transform: rotate(-5deg);
+  position: absolute;
+}
+
+.deco-pin {
+  width: 50px;
+  top: 46.3%;
+  right: 24%;
+  z-index: 6;
+  position: absolute;
+}
+
+.hero-phrase{
+  text-align: center;
+  font-family: "La Belle Aurore" !important;  
+  color: var(--Beige, #FFEFC4);
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  -webkit-text-stroke-color: var(--Darkest-Blue, #013C55);
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+}
+
+.hero-phrase::before {
+  text-align: center;
+  content: attr(data-text);
+  position: absolute;
+  z-index: -1; 
+  -webkit-text-stroke: 4px var(--Darkest-Blue, #013C55); /* The thick outline */
+  color: transparent; 
+}
+
+
+/*SECTION 2 ABOUT*/
+#about {
+  background-repeat: no-repeat;                      
+  background-position: center;                        
+  background-size: cover;                             
+  background-color: var(--Beige, #FFEFC4);      
+  position: relative;
+  min-height: 120vh;
+  justify-content: flex-start;
+  padding-top: 200px;
+}
+
+.about-header{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.upper-banner img {
+  width: 100%; /* Ensures the banner stretches across the screen */
+  display: block;
+}
+
+.header-bar {
+  position: absolute;
+  top: 33px;
+  left: 25px;
+  display: inline-flex;
+  padding: 0px 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background: var(--linear-beige-w-beige, linear-gradient(180deg, #FFEFC4 0%, #FFD258 100%));
+  border:  2px solid var(--Darkest-Blue, #013C55);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  z-index: 2;
+}
+
+.bar-items2{
+  color: var(--Dark-Blue, #086288);
+  font-family: "Caveat" !important;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.about-details-grid {
+  display: flex;
+  flex-direction: row; /* Forces children to sit side-by-side */
+  justify-content: center;
+  align-items: center;
+  gap: 30px; 
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+
+
+.info-box1 {
+  position: relative;
+  top: -30px; /* Moves it UP. Use positive numbers to move it DOWN */
+  left: -25px;
+  display: inline-flex;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background: var(--gradient-beige-blue-1, linear-gradient(180deg, var(--Beige, #FFEFC4) 0%, var(--Blue, #4D8DBA) 100%));
+  border:  2px solid #000;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  z-index: 2;
+}
+
+.box-items1 {
+  color: #000;
+  font-family: "Arial Narrow"!important;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+
+/* Center Column Container */
+.about-col-center {
+  flex: 1.5; /* Takes up slightly more room in the grid */
+  position: relative; /* Crucial: traps the absolute images inside this box */
+  min-height: 300px; /* Gives the absolute images enough vertical room */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Base style for both photos */
+.about-photo {
+  position: absolute;
+  width: 300px; /* Adjust based on your actual image dimensions */
+  border: 5px solid var(--Darkest-Blue, #013C55);
+
+}
+
+/* Positioning the Left Photo */
+.photo-tilt-left {
+  top: -10%;
+  left: 1%;
+  transform: rotate(-3deg); /* Tilts the photo to the left */
+  z-index: 1; /* Puts it underneath the right photo */
+}
+
+/* Positioning the Right Photo */
+.photo-tilt-right {
+  top: 5%;
+  right: 1%;
+  transform: rotate(3deg); /* Tilts the photo to the right */
+  z-index: 2; /* Puts it on top of the left photo */
+}
+
+/* Base style for the decorative flowers */
+.about-deco {
+  position: absolute;
+  z-index: 3; /* Ensures flowers always sit on top of the photos */
+}
+
+/* Positioning specific flowers */
+.deco-l {
+  top: -20%;
+  left: -8.5%;
+  width: 100px;
+}
+
+.deco-c {
+  top: -30%;
+  left: 40%;
+  width: 125px; /* Make the center cluster a bit larger */
+}
+
+.deco-r {
+  top: 78%;
+  right: 4%;
+  width: 100px;
+  transform: rotate(90deg);
+}
+
+.info-box2 {
+  position: relative;
+  top: -15px; 
+  right: -25px;
+  display: flex;         /* Changed from inline-flex so it forces a new line */
+  width: fit-content;    /* Prevents the box from stretching across the screen */
+  margin-bottom: 20px;   /* Adds space between this box and the bottom box */
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background: var(--Gradient-Beige-1, linear-gradient(90deg, #FFEFC4 0%, #FFD258 100%));
+  border:  2px solid #000;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  z-index: 2;
+}
+
+.info-box3 {
+  position: relative;
+  top: -10px;
+  right: -25px;
+  display: flex;         /* Changed from inline-flex */
+  width: fit-content;    /* Prevents the box from stretching */
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background: var(--Gradient-Blue-2, linear-gradient(90deg, var(--Light-Blue, #97D7FF) 0%, var(--Blue, #4D8DBA) 100%));
+  border:  2px solid #000;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  z-index: 2;
+}
+
+.box-items2 {
+  color: #000;
+  font-family: "Arial Narrow"!important;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+
+/* Container holding BOTH cards side-by-side */
+.credentials-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch; /* Forces both cards to match equal height */
+  gap: 30px;
+  width: 100%;
+  max-width: 1100px;
+  margin: 20px auto;
+}
+
+/* Base style for both cards */
+.credential-card {
+  flex: 1;
+  padding: 20px 25px;
+  border: 2px solid #000;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  z-index: 2;
+}
+
+/* Background Gradients */
+.card-organizations {
+  background: var(--Gradient-Beige-1, linear-gradient(180deg, #FFEFC4 0%, #FFD258 100%));
+}
+
+.card-education {
+  background: var(--Gradient-Blue-2, linear-gradient(180deg, var(--Light-Blue, #97D7FF) 0%, var(--Blue, #4D8DBA) 100%));
+}
+
+/* Titles */
+.card-title {
+  text-align: center;
+  font-family: "Barrio" !important;
+  font-size: 40px;
+  font-weight: normal;
+  color: #000;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+  line-height: 1;
+}
+
+/* Inner Vertical List */
+.card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Individual Row Item */
+.card-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Logo Sizing */
+.item-logo1 {
+  width: 55px;
+  height: 55px;
+  object-fit: contain;
+  flex-shrink: 0;
+  border: 2px solid #000;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.item-logo2 {
+  width: 55px;
+  height: 55px;
+  object-fit: contain;
+  flex-shrink: 0;
+  border: 2px solid #000;
+  border-radius: 50%;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+
+
+/* Item Text Typography */
+.item-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.item-text h3 {
+  color: #000;
+  font-family: "Arial Narrow" !important;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1.1;
+  margin: 0 0 2px 0;
+}
+
+.item-text p {
+  color: #000;
+  font-family: "Arial Narrow" !important;
+  font-size: 19px;
+  font-style: normal;
+  line-height: 1.25;
+  margin: 0;
+}
+
+/* Italic styling for terms and sub-details */
+.item-text .term,
+.item-text .sub-detail {
+  font-style: italic;
+}
+
+
+/* =========================================
+   EDUCATION CARD SPECIFIC OVERRIDES
+========================================= */
+
+/* 1. Increase spacing between PUP and TNHS */
+.card-education .card-list {
+  gap: 28px;
+}
+
+/* 2. Increase spacing between the logos and text */
+.card-education .card-item {
+  gap: 20px;
+}
+
+/* 3. Scale up the Education logos */
+.card-education .item-logo2 {
+  width: 75px;
+  height: 75px;
+}
+
+/* 4. Increase Education titles */
+.card-education .item-text h3 {
+  font-size: 22px;
+  margin-bottom: 4px;
+}
+
+/* 5. Increase Education body text */
+.card-education .item-text p {
+  font-size: 20px;
+  line-height: 1.3;
+}
+
+/* ==========================================
+   SECTION 3: INTERESTS
+   ========================================== */
+
+#interests {
+  background-repeat: no-repeat;                      
+  background-position: center;                        
+  background-size: cover;                             
+  background-image: var(--gradient-beige-blue-1, linear-gradient(180deg, var(--Beige, #FFEFC4) 0%, var(--Blue, #4D8DBA) 100%));    
+  position: relative;
+  justify-content: flex-start;
+  padding-top: 40px 20px 60px 20px;
+}
+
+/* Header Title Container (Stays in its top-left layout spot) */
+.interests-header {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-left: 20px;
+  left: -30%;
+}
+
+/* Handwritten Script Header ("dani's") */
+.header-script {
+  position: relative;
+  color: var(--Beige, #FFEFC4);
+  font-family: "La Belle Aurore" !important;
+  font-size: 90px;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+  margin-bottom: -70px;
+  margin-left: 0;
+  z-index: 2;
+}
+
+.header-script::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  -webkit-text-stroke: 3px var(--Darkest-Blue, #013C55);
+  color: var(--Darkest-Blue, #013C55);
+}
+
+/* Main Bold Header ("pastime!") */
+.header-main {
+  color: var(--Dark-Blue, #086288);
+  font-family: "Arial Narrow" !important;
+  font-size: 150px;
+  font-weight: bold;
+  line-height: 0.5;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  position: relative;
+  z-index: 1;
+  margin: 0;
+}
+
+.header-main::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  -webkit-text-stroke: 3px var(--Darkest-Blue, #013C55);
+  color: var(--Darkest-Blue, #013C55);
+}
+
+/* Cards Wrapper (Controls top spacing below header & side spacing) */
+.pastime-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  gap: 30px; /* Spacing BETWEEN the two cards */
+  width: 100%;
+  max-width: 1100px;
+  
+  /* SPACING CONTROL */
+  margin-top: 80px; /* Adjust this value to increase/decrease top gap between header & cards */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Individual Large Cards */
+.pastime-card {
+  flex: 1;
+  background: var(--gradient-beige-blue-1, linear-gradient(180deg, var(--Beige, #FFEFC4) 0%, var(--Blue, #4D8DBA) 100%));
+  border: 2px solid #000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  padding: 30px 30px 30px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Handwritten Card Heading */
+.card-script-title {
+  font-family: "La Belle Aurore" !important;
+  font-size: 70px;
+  font-weight: 400;
+  color: #000;
+  margin-top: 0;
+  margin-bottom: 25px;
+  line-height: 1;
+  text-align: center;
+}
+
+/* 2x3 Grid inside each Card */
+.tiles-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px 30px;
+  width: 100%;
+}
+
+/* Base Tile Styling */
+.pastime-tile {
+  border: 2px solid #000;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.25);
+  padding: 15px 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Tile Gradients */
+.tile-blue {
+  background: var(--Gradient-Blue-1, linear-gradient(90deg, var(--Dark-Blue, #086288) 0%, var(--Light-Blue, #97D7FF) 100%));
+}
+
+.tile-yellow {
+  background: var(--Gradient-Beige-1, linear-gradient(90deg, #FFEFC4 0%, #FFD258 100%));
+}
+
+/* Tile Text */
+.pastime-tile h3 {
+  color: #000;
+  font-family: "Arial Narrow" !important;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 1.1;
+  margin: 0 0 2px 0;
+}
+
+.pastime-tile p {
+  color: #000;
+  font-family: "Arial Narrow" !important;
+  font-size: 20px;
+  margin: 0;
+  line-height: 1.1;
+}
+
+/* ==========================================
+   SECTION 4: PROJECTS
+   ========================================== */
+
+#projects {
+  background-repeat: no-repeat;                      
+  background-position: center;                        
+  background-size: cover;                             
+  background-image: var(--linear-dbb, linear-gradient(180deg, var(--Blue, #4D8DBA) 0%, var(--Dark-Blue, #086288) 100%));    
+  position: relative;
+  justify-content: flex-start;
+  padding: 40px 20px 60px 20px;
+
+  /* FIX FOR HORIZONTAL LINE / GAP BETWEEN SECTIONS */
+  margin-top: -1px; /* Overlaps section boundary to eliminate sub-pixel line gaps */
+  overflow: hidden; /* Prevents child margins from collapsing outside the section */
+}
+
+/* Projects Header Container */
+.projects-header {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-right: 20px;
+}
+
+/* Handwritten Script Title Badge Box */
+.header-script-box {
+  background-image: var(--linear-dbb, linear-gradient(180deg, var(--Blue, #4D8DBA) 0%, var(--Dark-Blue, #086288) 100%));
+  border: 2px solid var(--Darkest-Blue, #013C55);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 5px 25px;
+  margin-bottom: -50px;
+  margin-right: 220px;
+  z-index: 1;
+}
+
+.header-script-projects {
+  position: relative;
+  color: var(--Beige, #FFEFC4);
+  font-family: "La Belle Aurore" !important;
+  font-size: 55px;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+/* Main 'projects' Big Text Title */
+.header-main-projects {
+  color: var(--Beige, #FFEFC4);
+  font-family: "Arial Narrow" !important;
+  font-size: 150px;
+  font-weight: bold;
+  line-height: 0.85;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  position: relative;
+  z-index: 2;
+  margin: 0;
+}
+
+.header-main-projects::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  -webkit-text-stroke: 4px var(--Darkest-Blue, #013C55);
+  color: transparent;
+}
+
+/* 3-Column Cards Container */
+.projects-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  gap: 30px;
+  width: 100%;
+  max-width: 1100px;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Individual Card Frame */
+.project-card {
+  flex: 1;
+  background: var(--gradient-beige-blue-1, linear-gradient(180deg, var(--Beige, #FFEFC4) 0%, var(--Blue, #4D8DBA) 100%));
+  border: 2px solid #000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Outer Frame Box (Beige Gradient Border Area) */
+.project-image-box {
+  width: 100%;
+  height: 300px;
+  background: var(--gradient-beige-blue-1, linear-gradient(180deg, var(--Beige, #FFEFC4) 0%, var(--Blue, #4D8DBA) 100%));
+  border: 2px solid #000;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Inner Frame Box (Contains the Image) */
+.project-image-inner {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.project-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Title Box */
+.project-title-box {
+  background: var(--Gradient-Blue-1, linear-gradient(90deg, var(--Dark-Blue, #086288) 0%, var(--Light-Blue, #97D7FF) 100%));
+  border: 2px solid var(--Darkest-Blue, #013C55);
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.25);
+  padding: 8px 15px;
+  width: 100%;
+  text-align: center;
+}
+
+.project-title-box h2 {
+  text-align: center;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #000;
+  font-family: "Arial Narrow" !important;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  color: var(--Beige, #FFEFC4);
+  margin: 0;
+  line-height: 1.1;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* Pill Button */
+.project-btn {
+  background: var(--Gradient-Beige-1, linear-gradient(90deg, #FFEFC4 0%, #FFD258 100%));
+  border: 2px solid #000;
+  border-radius: 25px;
+  color: #000;
+  font-family: "Arial Narrow" !important;
+  font-size: 22px;
+  text-decoration: none;
+  padding: 6px 20px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* ==========================================
+   SECTION 5: CONTACT
+   ========================================== */
+
+/* ==========================================
+   SECTION 5: CONTACT
+   ========================================== */
+
+#contact {
+  background-repeat: no-repeat;                      
+  background-position: center;                        
+  background-size: cover;                             
+  background-color: var(--Dark-Blue, #086288);      
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  margin-top: -1px; /* Prevents section boundary gaps */
+}
+
+/* Inner Container matching Section 1 structure */
+.contact-content {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  min-height: 100vh;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Spreads content vertically across screen */
+  align-items: center;
+}
+
+/* Top Left Branding Logo Link */
+.contact-logo {
+  align-self: flex-start; /* Keeps it strictly in top-left placement */
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none; /* Removes hyperlink underline */
+  cursor: pointer;
+}
+
+/* Center Section Header */
+.contact-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.header-script-contact {
+  position: relative;
+  color: var(--Beige, #FFEFC4);
+  font-family: "Caveat" !important;
+  font-size: 70px;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+  margin-bottom: -25px;
+  left: -25%;
+  z-index: 2;
+}
+
+.header-script-contact::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  -webkit-text-stroke: 4px var(--Darkest-Blue, #013C55);
+  color: transparent;
+}
+
+.header-main-contact {
+  color: var(--Beige, #FFEFC4);
+  font-family: "Arial Narrow" !important;
+  font-size: 140px;
+  font-weight: bold;
+  line-height: 0.85;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  position: relative;
+  z-index: 1;
+  margin: 0;
+}
+
+.header-main-contact::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  -webkit-text-stroke: 4px var(--Darkest-Blue, #013C55);
+  color: transparent;
+}
+
+/* Glassmorphic 2x2 Social Media Box */
+.socials-box {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px 40px;
+  width: 100%;
+  max-width: 500px;
+  background: var(--linear-dbb, linear-gradient(180deg, var(--Blue, #4D8DBA) 0%, var(--Dark-Blue, #086288) 100%));
+  border: 2px solid var(--Darkest-Blue, #013C55);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+  padding: 25px 35px;
+}
+
+.social-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  text-decoration: none;
+  color: var(--Beige, #FFEFC4);
+  font-family: "Caveat" !important;
+  font-size: 32px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.social-icon {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+/* Bottom Navigation Bar */
+.contact-nav-bar {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  padding: 0px 10px;
+  background: var(--linear-dbb, linear-gradient(180deg, var(--Blue, #4D8DBA) 0%, var(--Dark-Blue, #086288) 100%));
+  border: 1px solid var(--Darkest-Blue, #013C55);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.contact-bar-item {
+  color: var(--Beige, #FFEFC4);
+  font-family: "Arial Narrow" !important;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+/* Footer Copyright Script */
+.contact-footer p {
+  color: var(--Beige, #FFEFC4);
+  font-family: "La Belle Aurore" !important;
+  font-size: 28px;
+  text-align: center;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+  margin: 0;
+}
