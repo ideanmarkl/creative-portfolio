@@ -8,7 +8,7 @@
 /* ==========================================================================
    1. TABLET / IPAD STYLES (≤ 1024px)
    ========================================================================== */
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1200px) {
   
   /* Font Fallback Fix for Mobile/iPad OS */
   .bar-item,
