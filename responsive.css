@@ -1,0 +1,313 @@
+/* ==========================================================================
+   MOBILE & TABLET RESPONSIVE STYLESHEET (responsive.css)
+   ========================================================================== */
+
+/* Google Web Fonts Import (Handles custom fonts + mobile fallbacks) */
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Barrio&family=La+Belle+Aurore&family=Roboto+Condensed:wght@400;700&display=swap');
+
+/* ==========================================================================
+   1. TABLET / IPAD STYLES (≤ 1024px)
+   ========================================================================== */
+@media screen and (max-width: 1024px) {
+  
+  /* Font Fallback Fix for Mobile/iPad OS */
+  .bar-item,
+  .main-title,
+  .btn,
+  .box-items1,
+  .box-items2,
+  .item-text h3,
+  .item-text p,
+  .header-main,
+  .pastime-tile h3,
+  .pastime-tile p,
+  .header-main-projects,
+  .project-title-box h2,
+  .project-btn,
+  .header-main-contact,
+  .contact-bar-item {
+    font-family: "Roboto Condensed", Arial, sans-serif !important;
+  }
+
+  /* Section Heights & Spacing */
+  .site-section {
+    min-height: auto;
+    padding: 60px 20px;
+  }
+
+  /* Section 1: Homepage */
+  .home-header {
+    flex-direction: column;
+    gap: 20px;
+    display: inline-flex;
+  }
+
+  .portfolio-bar {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .hero-details {
+    flex-direction: column;
+    padding: 20px 0;
+  }
+
+  .main-title {
+    font-size: 70px;
+  }
+
+  .hero-collage {
+    min-height: 400px;
+    width: 100%;
+  }
+
+  .photo-top, .photo-bottom {
+    width: 300px;
+  }
+
+  /* Section 2: About */
+  #about {
+    padding-top: 140px;
+  }
+
+  .about-details-grid {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .credentials-container {
+    flex-direction: column;
+  }
+
+  /* Section 3: Interests */
+  .header-main {
+    font-size: 100px;
+  }
+
+  .header-script {
+    font-size: 65px;
+    margin-bottom: -30px;
+  }
+
+  .pastime-container {
+    flex-direction: column;
+    margin-top: 40px;
+  }
+
+  /* Section 4: Projects */
+  .projects-header {
+    align-items: center;
+    padding-right: 0;
+  }
+
+  .header-script-box {
+    margin-right: 0;
+    margin-bottom: -30px;
+  }
+
+  .header-main-projects {
+    font-size: 100px;
+    text-align: center;
+  }
+
+  .projects-container {
+    flex-direction: column;
+    margin-top: 40px;
+  }
+
+  /* Section 5: Contact */
+  .header-main-contact {
+    font-size: 90px;
+  }
+
+  .header-script-contact {
+    font-size: 50px;
+    margin-bottom: -25px;
+  }
+
+  .contact-nav-bar {
+    width: 100%;
+    max-width: 500px;
+  }
+}
+
+/* ==========================================================================
+   2. MOBILE / PHONE STYLES (≤ 768px)
+   ========================================================================== */
+@media screen and (max-width: 768px) {
+
+  /* Section Padding */
+  .site-section {
+    padding: 40px 15px;
+  }
+
+  /* Section 1: Homepage Header & Nav */
+  .portfolio-bar {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  .bar-item {
+    font-size: 24px;
+  }
+
+  .main-title {
+    font-size: 50px;
+  }
+
+  .welcome, .space {
+    font-size: 35px;
+  }
+
+  .role-banner h2 {
+    font-size: 24px;
+  }
+
+  .btn {
+    font-size: 18px;
+    padding: 8px 18px;
+  }
+
+  /* Collage Elements scaling on Mobile */
+  .hero-collage {
+    min-height: 320px;
+  }
+
+  .photo-top, .photo-bottom {
+    width: 220px;
+  }
+
+  /* Section 2: About */
+  #about {
+    padding-top: 100px;
+  }
+
+  .header-bar {
+    top: 15px;
+    left: 15px;
+  }
+
+  .bar-items2 {
+    font-size: 22px;
+  }
+
+  .about-photo {
+    width: 200px;
+  }
+
+  .info-box1, .info-box2, .info-box3 {
+    left: 0;
+    right: 0;
+    top: 0;
+    width: 100%;
+  }
+
+  .box-items1, .box-items2 {
+    font-size: 20px;
+  }
+
+  .card-title {
+    font-size: 30px;
+  }
+
+  /* Section 3: Interests */
+  .interests-header {
+    align-items: center;
+    padding-left: 0;
+    left: 0;
+  }
+
+  .header-script {
+    font-size: 50px;
+    margin-bottom: -20px;
+  }
+
+  .header-main {
+    font-size: 65px;
+    line-height: 1;
+  }
+
+  .card-script-title {
+    font-size: 42px;
+  }
+
+  /* Stack 2x3 Grid to 1 Column on Mobile */
+  .tiles-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .pastime-tile h3 {
+    font-size: 18px;
+  }
+
+  .pastime-tile p {
+    font-size: 15px;
+  }
+
+  /* Section 4: Projects */
+  .header-script-projects {
+    font-size: 32px;
+  }
+
+  .header-script-box {
+    padding: 5px 15px;
+  }
+
+  .header-main-projects {
+    font-size: 65px;
+    line-height: 1;
+  }
+
+  .project-image-box {
+    height: 220px;
+  }
+
+  .project-title-box h2 {
+    font-size: 28px;
+  }
+
+  .project-btn {
+    font-size: 18px;
+  }
+
+  /* Section 5: Contact */
+  .header-script-contact {
+    font-size: 38px;
+    margin-bottom: -15px;
+  }
+
+  .header-main-contact {
+    font-size: 60px;
+    line-height: 1;
+  }
+
+  .socials-box {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 20px;
+  }
+
+  .social-item {
+    font-size: 24px;
+  }
+
+  .contact-nav-bar {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  .contact-bar-item {
+    font-size: 22px;
+  }
+
+  .contact-footer p {
+    font-size: 20px;
+  }
+}
