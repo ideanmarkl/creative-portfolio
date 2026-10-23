@@ -2,33 +2,15 @@
    MOBILE & TABLET RESPONSIVE STYLESHEET (responsive.css)
    ========================================================================== */
 
-/* 1. GOOGLE WEB FONTS IMPORT (Handles custom script fonts + mobile fallbacks) */
+/* Google Web Fonts Import (Handles custom fonts + mobile fallbacks) */
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Barrio&family=La+Belle+Aurore&family=Roboto+Condensed:wght@400;700&display=swap');
 
-/* 2. GLOBAL OVERFLOW CONTROL (STOPS HORIZONTAL SCROLLING) */
-html, body {
-  width: 100%;
-  max-width: 100vw;
-  overflow-x: hidden !important;
-  margin: 0;
-  padding: 0;
-}
-
-*, *::before, *::after {
-  box-sizing: border-box !important;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
 /* ==========================================================================
-   TABLET / IPAD STYLES (≤ 1200px — Covers Portrait & Landscape iPads)
+   1. TABLET / IPAD STYLES (≤ 1024px)
    ========================================================================== */
 @media screen and (max-width: 1200px) {
   
-  /* System Font Fallback Fix for iOS/iPadOS */
+  /* Font Fallback Fix for Mobile/iPad OS */
   .bar-item,
   .main-title,
   .btn,
@@ -47,36 +29,32 @@ img {
     font-family: "Roboto Condensed", Arial, sans-serif !important;
   }
 
-  /* Section Spacing */
+  /* Section Heights & Spacing */
   .site-section {
     min-height: auto;
     padding: 60px 20px;
-    width: 100%;
-    overflow-x: hidden;
   }
 
-  /* --- SECTION 1: HOMEPAGE --- */
+  /* Section 1: Homepage Header & Nav Fixes */
   .home-header {
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     gap: 20px;
-    width: 100%;
   }
 
   .portfolio-bar {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    width: fit-content !important;
-    max-width: 100% !important;
-    padding: 10px 20px;
-    gap: 20px;
+    width: fit-content; /* Prevents text overflow */
+    max-width: 100%;
+    padding: 10px 25px;
+    gap: 25px;
   }
 
   .hero-details {
     flex-direction: column;
     padding: 20px 0;
-    width: 100%;
   }
 
   .main-title {
@@ -84,230 +62,200 @@ img {
   }
 
   .hero-collage {
-    min-height: 380px;
+    min-height: 400px;
     width: 100%;
-    max-width: 100%;
   }
 
   .photo-top, .photo-bottom {
-    width: 280px;
+    width: 300px;
   }
 
-  /* --- SECTION 2: ABOUT --- */
+  /* Section 2: About */
   #about {
-    padding-top: 100px;
-  }
-
-  .header-bar {
-    position: relative;
-    top: 0 !important;
-    left: 0 !important;
-    width: fit-content !important;
-    max-width: 100% !important;
-    margin: 0 auto 30px auto;
+    padding-top: 140px;
   }
 
   .about-details-grid {
     flex-direction: column;
-    gap: 30px;
-    width: 100%;
+    gap: 40px;
   }
 
   .credentials-container {
     flex-direction: column;
-    width: 100%;
   }
 
-  .info-box1, .info-box2, .info-box3 {
-    position: relative !important;
-    left: 0 !important;
-    right: 0 !important;
-    top: 0 !important;
-    width: 100% !important;
-    max-width: 100% !important;
-  }
-
-  /* --- SECTION 3: INTERESTS --- */
-  /* Remove negative absolute position offset (`left: -30%`) */
-  .interests-header {
-    position: relative !important;
-    left: 0 !important;
-    align-items: center !important;
-    padding-left: 0 !important;
-    width: 100% !important;
+  /* Section 3: Interests */
+  .header-main {
+    font-size: 100px;
   }
 
   .header-script {
     font-size: 65px;
-    margin-bottom: -25px;
-    margin-left: 0 !important;
-  }
-
-  .header-main {
-    font-size: 90px;
-    line-height: 1;
-    text-align: center;
+    margin-bottom: -30px;
   }
 
   .pastime-container {
     flex-direction: column;
-    width: 100% !important;
-    max-width: 100% !important;
     margin-top: 40px;
   }
 
-  /* --- SECTION 4: PROJECTS --- */
+  /* Section 4: Projects */
   .projects-header {
-    position: relative !important;
-    left: 0 !important;
-    align-items: center !important;
-    padding-right: 0 !important;
-    width: 100% !important;
+    align-items: center;
+    padding-right: 0;
   }
 
-  /* Remove negative margin & large right offsets (`margin-right: 220px`) */
   .header-script-box {
-    margin-right: 0 !important;
-    margin-left: 0 !important;
-    margin-bottom: -25px;
-    max-width: 100%;
+    margin-right: 0;
+    margin-bottom: -30px;
   }
 
   .header-main-projects {
-    font-size: 90px;
-    line-height: 1;
+    font-size: 100px;
     text-align: center;
   }
 
   .projects-container {
     flex-direction: column;
-    width: 100% !important;
-    max-width: 100% !important;
     margin-top: 40px;
   }
 
-  .project-card {
-    width: 100%;
-    max-width: 100%;
-  }
-
-  /* --- SECTION 5: CONTACT --- */
-  .contact-logo {
-    align-self: center;
-  }
-
+  /* Section 5: Contact */
   .header-main-contact {
-    font-size: 85px;
-    line-height: 1;
+    font-size: 90px;
   }
 
   .header-script-contact {
-    font-size: 48px;
-    margin-bottom: -20px;
-  }
-
-  .socials-box {
-    width: 100% !important;
-    max-width: 500px !important;
+    font-size: 50px;
+    margin-bottom: -25px;
   }
 
   .contact-nav-bar {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    width: fit-content !important;
-    max-width: 100% !important;
-    padding: 10px 20px;
-    gap: 20px;
+    width: fit-content;
+    max-width: 100%;
+    padding: 10px 25px;
+    gap: 25px;
   }
 }
 
 /* ==========================================================================
-   MOBILE / PHONE STYLES (≤ 768px)
+   2. MOBILE / PHONE STYLES (≤ 768px)
    ========================================================================== */
 @media screen and (max-width: 768px) {
 
+  /* Section Padding */
   .site-section {
     padding: 40px 15px;
   }
 
-  /* --- SECTION 1: HOMEPAGE --- */
+  /* Section 1: Homepage Header & Nav */
   .portfolio-bar {
     display: inline-flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    width: fit-content !important;
-    max-width: 100% !important;
+    width: fit-content;
+    max-width: 100%;
     height: auto;
-    padding: 8px 12px;
-    gap: 12px;
+    padding: 10px 15px;
+    gap: 15px;
   }
 
   .bar-item {
-    font-size: 20px;
+    font-size: 22px;
   }
 
   .main-title {
-    font-size: 45px;
+    font-size: 48px;
   }
 
   .welcome, .space {
-    font-size: 28px;
+    font-size: 32px;
   }
 
   .role-banner h2 {
-    font-size: 20px;
+    font-size: 22px;
   }
 
   .btn {
-    font-size: 16px;
-    padding: 6px 14px;
+    font-size: 18px;
+    padding: 8px 18px;
   }
 
+  /* Collage Elements Scaling */
   .hero-collage {
-    min-height: 300px;
+    min-height: 320px;
   }
 
   .photo-top, .photo-bottom {
-    width: 200px;
+    width: 220px;
   }
 
-  /* --- SECTION 2: ABOUT --- */
+  /* Section 2: About */
+  #about {
+    padding-top: 100px;
+  }
+
+  .header-bar {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: fit-content;
+    max-width: 100%;
+    margin: 0 auto 30px auto;
+  }
+
   .bar-items2 {
-    font-size: 20px;
+    font-size: 22px;
   }
 
   .about-photo {
-    width: 180px;
+    width: 200px;
+  }
+
+  .info-box1, .info-box2, .info-box3 {
+    left: 0;
+    right: 0;
+    top: 0;
+    width: 100%;
   }
 
   .box-items1, .box-items2 {
-    font-size: 18px;
+    font-size: 20px;
   }
 
   .card-title {
-    font-size: 26px;
+    font-size: 30px;
   }
 
-  /* --- SECTION 3: INTERESTS --- */
+  /* Section 3: Interests */
+  .interests-header {
+    align-items: center;
+    padding-left: 0;
+    left: 0;
+  }
+
   .header-script {
-    font-size: 42px;
-    margin-bottom: -15px;
+    font-size: 48px;
+    margin-bottom: -20px;
   }
 
   .header-main {
-    font-size: 55px;
+    font-size: 60px;
+    line-height: 1;
   }
 
   .card-script-title {
-    font-size: 36px;
+    font-size: 40px;
   }
 
-  /* Stack 2x3 Grid to 1 Column on Mobile Phones */
+  /* Stack 2x3 Grid to 1 Column on Mobile */
   .tiles-grid {
     grid-template-columns: 1fr;
-    gap: 10px;
+    gap: 12px;
   }
 
   .pastime-tile h3 {
@@ -315,52 +263,54 @@ img {
   }
 
   .pastime-tile p {
-    font-size: 14px;
+    font-size: 15px;
   }
 
-  /* --- SECTION 4: PROJECTS --- */
+  /* Section 4: Projects */
   .header-script-projects {
-    font-size: 28px;
+    font-size: 30px;
   }
 
   .header-script-box {
-    padding: 4px 12px;
+    padding: 5px 15px;
   }
 
   .header-main-projects {
-    font-size: 55px;
+    font-size: 60px;
+    line-height: 1;
   }
 
   .project-image-box {
-    height: 200px;
+    height: 220px;
   }
 
   .project-title-box h2 {
-    font-size: 24px;
+    font-size: 26px;
   }
 
   .project-btn {
-    font-size: 16px;
+    font-size: 18px;
   }
 
-  /* --- SECTION 5: CONTACT --- */
+  /* Section 5: Contact */
   .header-script-contact {
-    font-size: 32px;
-    margin-bottom: -12px;
+    font-size: 36px;
+    margin-bottom: -15px;
   }
 
   .header-main-contact {
-    font-size: 50px;
+    font-size: 55px;
+    line-height: 1;
   }
 
   .socials-box {
-    grid-template-columns: 1fr; /* Single column on phones */
-    gap: 12px;
-    padding: 15px 20px;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 20px;
   }
 
   .social-item {
-    font-size: 22px;
+    font-size: 24px;
   }
 
   .contact-nav-bar {
@@ -368,18 +318,18 @@ img {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    width: fit-content !important;
-    max-width: 100% !important;
+    width: fit-content;
+    max-width: 100%;
     height: auto;
-    padding: 8px 12px;
-    gap: 12px;
+    padding: 10px 15px;
+    gap: 15px;
   }
 
   .contact-bar-item {
-    font-size: 18px;
+    font-size: 20px;
   }
 
   .contact-footer p {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
