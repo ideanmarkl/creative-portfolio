@@ -35,16 +35,21 @@
     padding: 60px 20px;
   }
 
-  /* Section 1: Homepage */
+  /* Section 1: Homepage Header & Nav Fixes */
   .home-header {
     flex-direction: column;
+    align-items: center;
     gap: 20px;
-    display: inline-flex;
   }
 
   .portfolio-bar {
-    width: 100%;
-    max-width: 500px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content; /* Prevents text overflow */
+    max-width: 100%;
+    padding: 10px 25px;
+    gap: 25px;
   }
 
   .hero-details {
@@ -126,8 +131,13 @@
   }
 
   .contact-nav-bar {
-    width: 100%;
-    max-width: 500px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    max-width: 100%;
+    padding: 10px 25px;
+    gap: 25px;
   }
 }
 
@@ -143,27 +153,31 @@
 
   /* Section 1: Homepage Header & Nav */
   .portfolio-bar {
-    width: 100%;
-    height: auto;
-    padding: 10px;
-    gap: 15px;
+    display: inline-flex;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    max-width: 100%;
+    height: auto;
+    padding: 10px 15px;
+    gap: 15px;
   }
 
   .bar-item {
-    font-size: 24px;
+    font-size: 22px;
   }
 
   .main-title {
-    font-size: 50px;
+    font-size: 48px;
   }
 
   .welcome, .space {
-    font-size: 35px;
+    font-size: 32px;
   }
 
   .role-banner h2 {
-    font-size: 24px;
+    font-size: 22px;
   }
 
   .btn {
@@ -171,7 +185,7 @@
     padding: 8px 18px;
   }
 
-  /* Collage Elements scaling on Mobile */
+  /* Collage Elements Scaling */
   .hero-collage {
     min-height: 320px;
   }
@@ -186,8 +200,12 @@
   }
 
   .header-bar {
-    top: 15px;
-    left: 15px;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: fit-content;
+    max-width: 100%;
+    margin: 0 auto 30px auto;
   }
 
   .bar-items2 {
@@ -221,17 +239,17 @@
   }
 
   .header-script {
-    font-size: 50px;
+    font-size: 48px;
     margin-bottom: -20px;
   }
 
   .header-main {
-    font-size: 65px;
+    font-size: 60px;
     line-height: 1;
   }
 
   .card-script-title {
-    font-size: 42px;
+    font-size: 40px;
   }
 
   /* Stack 2x3 Grid to 1 Column on Mobile */
@@ -250,7 +268,7 @@
 
   /* Section 4: Projects */
   .header-script-projects {
-    font-size: 32px;
+    font-size: 30px;
   }
 
   .header-script-box {
@@ -258,7 +276,7 @@
   }
 
   .header-main-projects {
-    font-size: 65px;
+    font-size: 60px;
     line-height: 1;
   }
 
@@ -267,7 +285,7 @@
   }
 
   .project-title-box h2 {
-    font-size: 28px;
+    font-size: 26px;
   }
 
   .project-btn {
@@ -276,12 +294,12 @@
 
   /* Section 5: Contact */
   .header-script-contact {
-    font-size: 38px;
+    font-size: 36px;
     margin-bottom: -15px;
   }
 
   .header-main-contact {
-    font-size: 60px;
+    font-size: 55px;
     line-height: 1;
   }
 
@@ -296,18 +314,22 @@
   }
 
   .contact-nav-bar {
-    width: 100%;
-    height: auto;
-    padding: 10px;
-    gap: 15px;
+    display: inline-flex;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    max-width: 100%;
+    height: auto;
+    padding: 10px 15px;
+    gap: 15px;
   }
 
   .contact-bar-item {
-    font-size: 22px;
+    font-size: 20px;
   }
 
   .contact-footer p {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
