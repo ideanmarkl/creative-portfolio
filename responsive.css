@@ -8,7 +8,7 @@
 /* ==========================================================================
    1. TABLET / IPAD STYLES (≤ 1024px)
    ========================================================================== */
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1440px) {
   
   /* Font Fallback Fix for Mobile/iPad OS */
   .bar-item,
@@ -37,7 +37,7 @@
 
   /* Section 1: Homepage Header & Nav Fixes */
   .home-header {
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     gap: 20px;
   }
