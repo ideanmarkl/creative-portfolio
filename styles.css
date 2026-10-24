@@ -1,7 +1,9 @@
+/*GOOGLE WEB FONTS IMPORT*/
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Barrio&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=La+Belle+Aurore&display=swap');
 
+/*GLOBAL RESETS & BASE STYLES*/
 * {
   margin: 0;
   padding: 0;
@@ -29,9 +31,7 @@ html, body {
   display: none;
 }
 
-/* ==========================================================================
-   SECTION 1: HOMEPAGE
-   ========================================================================== */
+/*SECTION 1 HOMEPAGE*/
 
 #homepage {
   background-repeat: no-repeat;                      
@@ -49,7 +49,7 @@ html, body {
   padding: 25px;
 }
 
-/* Header & Nav */
+/*Header & Navigation*/
 .home-header {
   width: 100%;
   display: flex;
@@ -113,6 +113,7 @@ html, body {
   text-decoration: none;
 }
 
+/*Hero Content Layout*/
 .hero-details {
   display: flex;
   justify-content: space-between;
@@ -124,7 +125,7 @@ html, body {
   gap: 50px;
 }
 
-/* Left Column: Text & Buttons */
+/*Left Column: Text Content & Buttons*/
 .hero-text-content {
   flex: 1;
   display: flex;
@@ -205,13 +206,13 @@ html, body {
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-/* Right Column: Scrapbook Collage Canvas */
+/*Right Column: Scrapbook Collage Canvas*/
 .hero-collage {
   flex: 1;
   position: relative; 
   width: 100%;
-  max-width: 500px;             /* Locked canvas width */
-  aspect-ratio: 500 / 520;      /* Preserves exact aspect ratio */
+  max-width: 500px;             
+  aspect-ratio: 500 / 520;      
   display: flex;
   justify-content: center;
   align-items: center;
@@ -219,7 +220,6 @@ html, body {
   box-sizing: border-box;
 }
 
-/* Base styles for all layered items inside collage */
 .hero-collage .photo,
 .hero-collage .deco {
   position: absolute !important;
@@ -247,7 +247,7 @@ html, body {
   box-shadow: 2px 4px 8px rgba(0,0,0,0.3);
 }
 
-/* --- DECORATIONS (Locked Pixel Mapping) --- */
+/*Collage Decorative Elements*/
 .deco-clip {
   width: 125px;
   top: 2px;
@@ -355,10 +355,7 @@ html, body {
   color: transparent; 
 }
 
-
-/* ==========================================================================
-   SECTION 2: ABOUT
-   ========================================================================== */
+/*SECTION 2 ABOUT*/
 
 #about {
   background-repeat: no-repeat;                      
@@ -408,6 +405,7 @@ html, body {
   line-height: normal;
 }
 
+/*About Grid & Info Boxes*/
 .about-details-grid {
   display: flex;
   flex-direction: row; 
@@ -444,13 +442,13 @@ html, body {
   line-height: normal;
 }
 
-/* About Center Collage Canvas Anchor */
+/*About Center Column Canvas*/
 .about-col-center {
   flex: 1.5;
   position: relative;
   width: 100%;
-  max-width: 450px;             /* Locked canvas width */
-  aspect-ratio: 600 / 500;        /* Preserves exact frame ratio */
+  max-width: 450px;             
+  aspect-ratio: 600 / 500;        
   display: flex;
   justify-content: center;
   align-items: center;
@@ -458,20 +456,17 @@ html, body {
   box-sizing: border-box;
 }
 
-/* Force child photos and decorations to anchor strictly inside canvas */
 .about-col-center .about-photo,
 .about-col-center .about-deco {
   position: absolute !important;
 }
 
-/* Base Photos */
 .about-photo {
   width: 300px;
   height: auto;
   border: 5px solid var(--Darkest-Blue, #013C55);
 }
 
-/* Photo Positions */
 .photo-tilt-left {
   top: 40px;
   left: -70px;
@@ -486,7 +481,7 @@ html, body {
   z-index: 2;
 }
 
-/* Decorative Flowers */
+/*About Decorative Flowers*/
 .deco-l {
   top: 10px;
   left: -142px;
@@ -553,6 +548,7 @@ html, body {
   line-height: normal;
 }
 
+/*Credentials Cards Container*/
 .credentials-container {
   display: flex;
   flex-direction: row;
@@ -673,10 +669,7 @@ html, body {
   line-height: 1.3;
 }
 
-
-/* ==========================================================================
-   SECTION 3: INTERESTS
-   ========================================================================== */
+/*SECTION 3 INTERESTS*/
 
 #interests {
   background-repeat: no-repeat;                      
@@ -818,10 +811,7 @@ html, body {
   line-height: 1.1;
 }
 
-
-/* ==========================================================================
-   SECTION 4: PROJECTS
-   ========================================================================== */
+/*SECTION 4 PROJECTS*/
 
 #projects {
   background-repeat: no-repeat;                      
@@ -974,10 +964,7 @@ html, body {
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-
-/* ==========================================================================
-   SECTION 5: CONTACT
-   ========================================================================== */
+/*SECTION 5 CONTACT*/
 
 #contact {
   background-repeat: no-repeat;                      

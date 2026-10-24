@@ -1,22 +1,16 @@
-/* ==========================================================================
-   MOBILE & TABLET RESPONSIVE STYLESHEET (responsive.css)
-   ========================================================================== */
-
-/* Google Web Fonts Import */
+/*GOOGLE WEB FONTS IMPORT*/
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Barrio&family=La+Belle+Aurore&family=Roboto+Condensed:wght@400;700&display=swap');
 
-/* Base reset for menu controls across viewports */
+/*BASE RESET FOR MENU CONTROLS*/
 .menu-toggle-checkbox,
 .hamburger-btn {
   display: none;
 }
 
-/* ==========================================================================
-   1. TABLET / IPAD STYLES (≤ 1200px)
-   ========================================================================== */
+/*TABLET & IPAD STYLES*/
 @media screen and (max-width: 1200px) {
   
-  /* Font Fallback Fix for Mobile/iPad OS */
+  /*Font Fallback Fix*/
   .bar-item,
   .main-title,
   .btn,
@@ -35,13 +29,13 @@
     font-family: "Roboto Condensed", Arial, sans-serif !important;
   }
 
-  /* Section Heights & Spacing */
+  /*Section Heights & Spacing*/
   .site-section {
     min-height: auto;
     padding: 60px 20px;
   }
 
-  /* Section 1: Homepage Header & Nav Fixes */
+  /*SECTION 1 HOMEPAGE*/
   .home-header {
     flex-direction: row;
     align-items: center;
@@ -67,7 +61,7 @@
     font-size: 70px;
   }
 
-  /* Section 2: About */
+  /*SECTION 2 ABOUT*/
   #about {
     padding-top: 140px;
   }
@@ -81,7 +75,7 @@
     flex-direction: column;
   }
 
-  /* Section 3: Interests */
+  /*SECTION 3 INTERESTS*/
   .header-main {
     font-size: 100px;
   }
@@ -96,7 +90,7 @@
     margin-top: 40px;
   }
 
-  /* Section 4: Projects */
+  /*SECTION 4 PROJECTS*/
   .projects-header {
     align-items: center;
     padding-right: 0;
@@ -117,7 +111,7 @@
     margin-top: 40px;
   }
 
-  /* Section 5: Contact */
+  /*SECTION 5 CONTACT*/
   .header-main-contact {
     font-size: 90px;
   }
@@ -138,23 +132,21 @@
   }
 }
 
-/* ==========================================================================
-   2. MOBILE / PHONE STYLES (≤ 768px)
-   ========================================================================== */
+/*MOBILE & PHONE STYLES*/
 @media screen and (max-width: 768px) {
 
-  /* Global Mobile Shadow Removal */
+  /*Global Mobile Shadow Removal*/
   *, ::before, ::after {
     box-shadow: none !important;
     text-shadow: none !important;
   }
 
-  /* Section Padding */
+  /*Section Padding*/
   .site-section {
     padding: 10px 15px;
   }
 
-  /* Section 1: Header Layout & Centered Logo */
+  /*SECTION 1 HOMEPAGE*/
   .home-header {
     position: relative;
     display: flex;
@@ -195,7 +187,7 @@
     height: auto;
   }
 
-  /* --- HAMBURGER MENU CONTROLS --- */
+  /*Hamburger Menu Controls*/
   .menu-toggle-checkbox {
     display: none !important;
   }
@@ -223,7 +215,6 @@
     transition: all 0.3s ease-in-out;
   }
 
-  /* Animate Hamburger into 'X' when open */
   .menu-toggle-checkbox:checked + .hamburger-btn span:nth-child(1) {
     transform: translateY(8.5px) rotate(45deg);
   }
@@ -236,10 +227,10 @@
     transform: translateY(-8.5px) rotate(-45deg);
   }
 
-  /* --- HORIZONTAL NAVIGATION DRAWER --- */
+  /*Horizontal Navigation Drawer*/
   .portfolio-bar {
-    display: none !important;            /* Default hidden state */
-    flex-direction: row !important;       /* Displays links in a horizontal row */
+    display: none !important;            
+    flex-direction: row !important;       
     justify-content: space-evenly;
     align-items: center;
     position: absolute;
@@ -255,7 +246,6 @@
     z-index: 1000;
   }
 
-  /* Reveal horizontal menu bar when checkbox is checked */
   .menu-toggle-checkbox:checked ~ .portfolio-bar {
     display: flex !important;
   }
@@ -273,7 +263,7 @@
     padding: 40px 0;
   }
 
-  /* Hero Section Typography */
+  /*Typography*/
   .main-title {
     font-size: 60px;
   }
@@ -299,17 +289,16 @@
     -webkit-text-stroke: 2px var(--Darkest-Blue, #013C55);
   }
 
-  /* Scale down collage canvas & fit layout on mobile screens */
+  /*Hero Collage Scaling*/
   .hero-collage {
-    max-width: 330px !important;          /* Shrinks the entire canvas frame */
-    aspect-ratio: 600 / 500 !important;   /* Keeps the exact photo & asset proportions */
-    transform: scale(1);               /* Proportional scaling down for narrow phones */
+    max-width: 330px !important;          
+    aspect-ratio: 600 / 500 !important;   
+    transform: scale(1);               
     transform-origin: center center;
     margin: 0 auto;
     margin-top: 25px;
   }
 
-  /* Scale down child photos and decorations proportionally */
   .photo-top,
   .photo-bottom {
     width: 250px !important;
@@ -319,17 +308,15 @@
     top: 10px !important;
     left: 30px !important;
     border: 3px solid var(--Beige, #FFEFC4);
-
   }
 
   .photo-bottom {
     top: 130px !important;
     left: 50px !important;
     border: 3px solid var(--Beige, #FFEFC4);
-
   }
 
-  /* Scale down individual decorations to match reduced photo sizes */
+  /*Hero Collage Decorations*/
   .deco-clip {
     width: 80px !important;
     top: -36px !important;
@@ -402,7 +389,7 @@
     right: 130px !important;
   }
 
-/* Section 2: About Section Mobile Scaling */
+  /*SECTION 2 ABOUT*/
   #about {
     padding-top: 100px;
   }
@@ -413,18 +400,15 @@
     align-items: center;
   }
 
-  /* Scale down center collage canvas proportionally for mobile */
   .about-col-center {
-    max-width: 320px !important;         /* Scaled-down canvas width */
-    aspect-ratio: 600 / 300 !important;  /* Maintains identical aspect ratio */
+    max-width: 320px !important;        
+    aspect-ratio: 600 / 300 !important;  
     margin: 10px auto;
   }
 
-  /* Scaled photos inside mobile canvas */
   .about-photo {
     width: 150px !important;
     border: 3px solid var(--Darkest-Blue, #013C55);
-
   }
 
   .photo-tilt-left {
@@ -437,7 +421,6 @@
     right: 10px !important;
   }
 
-  /* Scaled flowers inside mobile canvas */
   .deco-l {
     top: 0px !important;
     left: -24px !important;
@@ -464,17 +447,17 @@
   }
 
   .info-box1 {
-  position: relative;
-  display: inline-flex;
-  padding: 10px;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  background: var(--gradient-beige-blue-1, linear-gradient(180deg, var(--Beige, #FFEFC4) 0%, var(--Blue, #4D8DBA) 100%));
-  border: 2px solid #000;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  z-index: 2;
-}
+    position: relative;
+    display: inline-flex;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background: var(--gradient-beige-blue-1, linear-gradient(180deg, var(--Beige, #FFEFC4) 0%, var(--Blue, #4D8DBA) 100%));
+    border: 2px solid #000;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    z-index: 2;
+  }
 
   .box-items1, .box-items2 {
     font-size: 20px;
@@ -485,7 +468,7 @@
     font-size: 30px;
   }
 
-  /* Section 3: Interests */
+  /*SECTION 3 INTERESTS*/
   .interests-header {
     align-items: center;
     padding-left: 0;
@@ -506,7 +489,6 @@
     font-size: 40px;
   }
 
-  /* Stack 2x3 Grid to 1 Column on Mobile */
   .tiles-grid {
     grid-template-columns: 1fr;
     gap: 12px;
@@ -520,7 +502,7 @@
     font-size: 15px;
   }
 
-  /* Section 4: Projects */
+  /*SECTION 4 PROJECTS*/
   .header-script-projects {
     font-size: 30px;
   }
@@ -547,7 +529,7 @@
     font-size: 18px;
   }
 
-  /* Section 5: Contact */
+  /*SECTION 5 CONTACT*/
   .header-script-contact {
     font-size: 36px;
     margin-bottom: -10px;
