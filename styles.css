@@ -368,7 +368,7 @@ html, body {
   position: relative;
   min-height: 120vh;
   justify-content: flex-start;
-  padding-top: 200px;
+  padding-top: 150px;
 }
 
 .about-header {
@@ -417,13 +417,13 @@ html, body {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  margin-bottom: 50px;
+  margin-bottom: 0px;
 }
 
 .info-box1 {
   position: relative;
   top: -30px; 
-  left: -25px;
+  left: -45px;
   display: inline-flex;
   padding: 10px;
   justify-content: center;
@@ -444,63 +444,77 @@ html, body {
   line-height: normal;
 }
 
+/* About Center Collage Canvas Anchor */
 .about-col-center {
-  flex: 1.5; 
-  position: relative; 
-  min-height: 300px; 
+  flex: 1.5;
+  position: relative;
+  width: 100%;
+  max-width: 450px;             /* Locked canvas width */
+  aspect-ratio: 600 / 500;        /* Preserves exact frame ratio */
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
+/* Force child photos and decorations to anchor strictly inside canvas */
+.about-col-center .about-photo,
+.about-col-center .about-deco {
+  position: absolute !important;
+}
+
+/* Base Photos */
 .about-photo {
-  position: absolute;
-  width: 300px; 
+  width: 300px;
+  height: auto;
   border: 5px solid var(--Darkest-Blue, #013C55);
 }
 
+/* Photo Positions */
 .photo-tilt-left {
-  top: -10%;
-  left: 1%;
-  transform: rotate(-3deg); 
-  z-index: 1; 
+  top: 40px;
+  left: -70px;
+  transform: rotate(-3deg);
+  z-index: 1;
 }
 
 .photo-tilt-right {
-  top: 5%;
-  right: 1%;
-  transform: rotate(3deg); 
-  z-index: 2; 
+  top: 30px;
+  right: -70px;
+  transform: rotate(3deg);
+  z-index: 2;
 }
 
-.about-deco {
-  position: absolute;
-  z-index: 3; 
-}
-
+/* Decorative Flowers */
 .deco-l {
-  top: -20%;
-  left: -8.5%;
-  width: 100px;
+  top: 10px;
+  left: -142px;
+  width: 140px;
+  transform: rotate(3deg);
+  z-index: 3;
 }
 
 .deco-c {
-  top: -30%;
-  left: 40%;
-  width: 125px; 
+  top: -15px;
+  left: 140px;
+  width: 180px;
+  z-index: 3;
+  transform: rotate(-3deg);
 }
 
 .deco-r {
-  top: 78%;
-  right: 4%;
-  width: 100px;
-  transform: rotate(90deg);
+  top: -15px;
+  right: -155px;
+  width: 140px;
+  transform: rotate(3deg);
+  z-index: 3;
 }
 
 .info-box2 {
   position: relative;
   top: -15px; 
-  right: -25px;
+  right: -45px;
   display: flex;        
   width: fit-content;    
   margin-bottom: 20px;   
@@ -517,7 +531,7 @@ html, body {
 .info-box3 {
   position: relative;
   top: -10px;
-  right: -25px;
+  right: -45px;
   display: flex;        
   width: fit-content;    
   padding: 10px;
