@@ -386,13 +386,13 @@
 
   .deco-tape-blue {
     width: 100px !important;
-    bottom: 60px !important;
+    bottom: -10px !important;
     left: 15px !important;
   }
 
   .deco-tape-yellow {
     width: 100px !important;
-    bottom: 65px !important;
+    bottom: -5px !important;
     right: -10px !important;
   }
 
