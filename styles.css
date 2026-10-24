@@ -24,7 +24,14 @@ html, body {
   align-items: center;
 }
 
-/*SECTION 1 HOMEPAGE*/
+.menu-toggle-checkbox,
+.hamburger-btn {
+  display: none;
+}
+
+/* ==========================================================================
+   SECTION 1: HOMEPAGE
+   ========================================================================== */
 
 #homepage {
   background-repeat: no-repeat;                      
@@ -40,25 +47,23 @@ html, body {
   width: 100%;
   min-height: 100vh;
   padding: 25px;
-
 }
 
-/* Flexbox container locking both items on the exact same Y-axis */
+/* Header & Nav */
 .home-header {
   width: 100%;
   display: flex;
-  flex-direction: row;        /* Places logo and nav side-by-side */
-  align-items: center;        /* Locks both items to the EXACT same Y-axis center line */
-  justify-content: space-between; /* Pushes logo left and nav bar right */
+  flex-direction: row;        
+  align-items: center;        
+  justify-content: space-between; 
 }
 
-/* Logo styling */
 .logo {
-  align-self: flex-start; /* Keeps it strictly in top-left placement */
+  align-self: flex-start; 
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  text-decoration: none; /* Removes hyperlink underline */
+  text-decoration: none; 
   cursor: pointer;
 }
 
@@ -66,7 +71,8 @@ html, body {
   color: var(--Beige, #FFEFC4);
   text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   -webkit-text-stroke-color: var(--Darkest-Blue, #013C55);
-  font-family: "Caveat", cursive, sans-serif !important;  font-size: 50px;
+  font-family: "Caveat", cursive, sans-serif !important;  
+  font-size: 50px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -76,7 +82,7 @@ html, body {
   content: attr(data-text);
   position: absolute;
   z-index: -1; 
-  -webkit-text-stroke: 4px var(--Darkest-Blue, #013C55); /* The thick outline */
+  -webkit-text-stroke: 4px var(--Darkest-Blue, #013C55); 
   color: transparent; 
 }
 
@@ -85,7 +91,6 @@ html, body {
   height: 50px; 
 }
 
-/* Nav bar styling */
 .portfolio-bar {
   display: flex;
   width: 600px;
@@ -96,7 +101,6 @@ html, body {
   background: var(--linear-dbb, linear-gradient(180deg, var(--Blue, #4D8DBA) 0%, var(--Dark-Blue, #086288) 100%));
   border: 1px solid var(--Darkest-Blue, #013C55);
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-
 }
 
 .bar-item {
@@ -109,27 +113,24 @@ html, body {
   text-decoration: none;
 }
 
-.hero-details{
+.hero-details {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  max-width: 1000px; /* Adjust based on your wrapper */
+  max-width: 1000px; 
   margin: 0 auto;
   padding: 25px 25px;
   gap: 50px;
 }
 
-/* =========================================
-   LEFT COLUMN: TEXT & BUTTONS
-========================================= */
+/* Left Column: Text & Buttons */
 .hero-text-content {
   flex: 1;
   display: flex;
   flex-direction: column;
   gap: 25px; 
   width: fit-content;
-  
 }
 
 .intro-text {
@@ -155,14 +156,13 @@ html, body {
   text-align: center;
   position: relative;
   z-index: 1;
-  
 }
 
 .main-title::before {
   content: attr(data-text);
   position: absolute;
   z-index: -1; 
-  -webkit-text-stroke: 4px var(--Darkest-Blue, #013C55); /* The thick outline */
+  -webkit-text-stroke: 4px var(--Darkest-Blue, #013C55); 
   color: transparent; 
 }
 
@@ -170,7 +170,6 @@ html, body {
   align-self: flex-end;
 }
 
-/* The role banner */
 .role-banner {
   background: var(--linear-dbb, linear-gradient(180deg, var(--Blue, #4D8DBA) 0%, var(--Dark-Blue, #086288) 100%));
   border: 1px solid var(--Darkest-Blue, #013C55);
@@ -188,7 +187,6 @@ html, body {
   font-weight: normal;
 }
 
-/* Buttons */
 .action-buttons {
   display: flex;
   gap: 25px;
@@ -207,147 +205,136 @@ html, body {
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-/* =========================================
-   RIGHT COLUMN: SCRAPBOOK COLLAGE
-========================================= */
+/* Right Column: Scrapbook Collage Canvas */
 .hero-collage {
   flex: 1;
   position: relative; 
-  min-height: 500px;
+  width: 100%;
+  max-width: 500px;             /* Locked canvas width */
+  aspect-ratio: 500 / 520;      /* Preserves exact aspect ratio */
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
-/* Base styles for all layered items */
+/* Base styles for all layered items inside collage */
 .hero-collage .photo,
 .hero-collage .deco {
-  position: absolute;
+  position: absolute !important;
 }
 
-
 .photo-top {
-  top: 15%;
-  left: 15%;
+  top: 75px;
+  left: 50px;
+  width: 380px;
+  height: auto;
   transform: rotate(3deg);
   z-index: 1;
   border: 5px solid var(--Beige, #FFEFC4);
   box-shadow: 2px 4px 8px rgba(0,0,0,0.3);
-  width: 400px;
-  height: auto;
 }
 
 .photo-bottom {
-  bottom: 7%;
-  left: 30%;
+  top: 250px;
+  left: 110px;
+  width: 380px;
+  height: auto;
   transform: rotate(-3deg);
   z-index: 2;
   border: 5px solid var(--Beige, #FFEFC4);
   box-shadow: 2px 4px 8px rgba(0,0,0,0.3);
-  width: 400px;
-  height: auto;
 }
 
-/* Decorations */
+/* --- DECORATIONS (Locked Pixel Mapping) --- */
 .deco-clip {
   width: 125px;
-  top: 0.1%;
-  left: 40%;
+  top: 2px;
+  left: 185px;
   z-index: 3;
-  position: fixed;
 }
 
 .deco-blflowers-la {
   width: 180px;
-  top: 35%;
-  left: 0%;
+  top: 180px;
+  left: -20px;
   z-index: 5;
-  position: absolute;
 }
 
 .deco-blflowers-lb {
   width: 175px;
-  top: 43%;
-  left: 10%;
+  top: 220px;
+  left: 25px;
   z-index: 4;
-  position: absolute;
 }
 
 .deco-beflowers-la {
   width: 110px;
-  top: 55%;
-  left: 0%;
+  top: 285px;
+  left: -15px;
   z-index: 7;
-  position: absolute;
 }
 
 .deco-beflowers-lb {
   width: 100px;
-  top: 60%;
-  left: 10%;
+  top: 310px;
+  left: 35px;
   z-index: 6;
-  position: absolute;
 }
 
 .deco-blflowers-ra {
   width: 175px;
-  top: 28%;
-  right: -25%;
+  top: 155px;
+  right: -80px;
   z-index: 5;
-  position: absolute;
 }
 
 .deco-blflowers-rb {
   width: 215px;
-  top: 7%;
-  right: -25%;
+  top: 40px;
+  right: -80px;
   z-index: 4;
-  position: absolute;
 }
 
 .deco-beflowers-ra {
   width: 110px;
-  top: 18%;
-  right: -28%;
+  top: 90px;
+  right: -100px;
   z-index: 7;
-  position: absolute;
 }
 
 .deco-beflowers-rb {
   width: 100px;
-  top: 26%;
-  right: -30%;
+  top: 135px;
+  right: -100px;
   z-index: 6;
-  position: absolute;
 }
 
 .deco-tape-blue {
   width: 150px;
-  bottom: 1%;
-  left: 18%;
+  bottom: -10px;
+  left: 70px;
   z-index: 3;
   transform: rotate(5deg);
-  position: fixed;
 }
 
 .deco-tape-yellow {
   width: 150px;
-  bottom: 3%;
-  right: -30%;
+  bottom: -10px;
+  right: -90px;
   z-index: 3;
   transform: rotate(-5deg);
-  position: absolute;
 }
 
 .deco-pin {
-  width: 50px;
-  top: 46.3%;
-  right: 24%;
+  width: 45px;
+  top: 225px;
+  right: 150px;
   z-index: 6;
-  position: absolute;
 }
 
-.hero-phrase{
+.hero-phrase {
   text-align: center;
   font-family: "La Belle Aurore" !important;  
   color: var(--Beige, #FFEFC4);
@@ -357,7 +344,6 @@ html, body {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-
 }
 
 .hero-phrase::before {
@@ -365,12 +351,15 @@ html, body {
   content: attr(data-text);
   position: absolute;
   z-index: -1; 
-  -webkit-text-stroke: 4px var(--Darkest-Blue, #013C55); /* The thick outline */
+  -webkit-text-stroke: 4px var(--Darkest-Blue, #013C55); 
   color: transparent; 
 }
 
 
-/*SECTION 2 ABOUT*/
+/* ==========================================================================
+   SECTION 2: ABOUT
+   ========================================================================== */
+
 #about {
   background-repeat: no-repeat;                      
   background-position: center;                        
@@ -382,7 +371,7 @@ html, body {
   padding-top: 200px;
 }
 
-.about-header{
+.about-header {
   position: absolute;
   top: 0;
   left: 0;
@@ -391,7 +380,7 @@ html, body {
 }
 
 .upper-banner img {
-  width: 100%; /* Ensures the banner stretches across the screen */
+  width: 100%; 
   display: block;
 }
 
@@ -405,12 +394,12 @@ html, body {
   align-items: center;
   gap: 10px;
   background: var(--linear-beige-w-beige, linear-gradient(180deg, #FFEFC4 0%, #FFD258 100%));
-  border:  2px solid var(--Darkest-Blue, #013C55);
+  border: 2px solid var(--Darkest-Blue, #013C55);
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   z-index: 2;
 }
 
-.bar-items2{
+.bar-items2 {
   color: var(--Dark-Blue, #086288);
   font-family: "Caveat" !important;
   font-size: 30px;
@@ -421,7 +410,7 @@ html, body {
 
 .about-details-grid {
   display: flex;
-  flex-direction: row; /* Forces children to sit side-by-side */
+  flex-direction: row; 
   justify-content: center;
   align-items: center;
   gap: 30px; 
@@ -431,10 +420,9 @@ html, body {
   margin-bottom: 50px;
 }
 
-
 .info-box1 {
   position: relative;
-  top: -30px; /* Moves it UP. Use positive numbers to move it DOWN */
+  top: -30px; 
   left: -25px;
   display: inline-flex;
   padding: 10px;
@@ -442,7 +430,7 @@ html, body {
   align-items: center;
   gap: 10px;
   background: var(--gradient-beige-blue-1, linear-gradient(180deg, var(--Beige, #FFEFC4) 0%, var(--Blue, #4D8DBA) 100%));
-  border:  2px solid #000;
+  border: 2px solid #000;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   z-index: 2;
 }
@@ -456,48 +444,40 @@ html, body {
   line-height: normal;
 }
 
-
-/* Center Column Container */
 .about-col-center {
-  flex: 1.5; /* Takes up slightly more room in the grid */
-  position: relative; /* Crucial: traps the absolute images inside this box */
-  min-height: 300px; /* Gives the absolute images enough vertical room */
+  flex: 1.5; 
+  position: relative; 
+  min-height: 300px; 
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* Base style for both photos */
 .about-photo {
   position: absolute;
-  width: 300px; /* Adjust based on your actual image dimensions */
+  width: 300px; 
   border: 5px solid var(--Darkest-Blue, #013C55);
-
 }
 
-/* Positioning the Left Photo */
 .photo-tilt-left {
   top: -10%;
   left: 1%;
-  transform: rotate(-3deg); /* Tilts the photo to the left */
-  z-index: 1; /* Puts it underneath the right photo */
+  transform: rotate(-3deg); 
+  z-index: 1; 
 }
 
-/* Positioning the Right Photo */
 .photo-tilt-right {
   top: 5%;
   right: 1%;
-  transform: rotate(3deg); /* Tilts the photo to the right */
-  z-index: 2; /* Puts it on top of the left photo */
+  transform: rotate(3deg); 
+  z-index: 2; 
 }
 
-/* Base style for the decorative flowers */
 .about-deco {
   position: absolute;
-  z-index: 3; /* Ensures flowers always sit on top of the photos */
+  z-index: 3; 
 }
 
-/* Positioning specific flowers */
 .deco-l {
   top: -20%;
   left: -8.5%;
@@ -507,7 +487,7 @@ html, body {
 .deco-c {
   top: -30%;
   left: 40%;
-  width: 125px; /* Make the center cluster a bit larger */
+  width: 125px; 
 }
 
 .deco-r {
@@ -521,15 +501,15 @@ html, body {
   position: relative;
   top: -15px; 
   right: -25px;
-  display: flex;         /* Changed from inline-flex so it forces a new line */
-  width: fit-content;    /* Prevents the box from stretching across the screen */
-  margin-bottom: 20px;   /* Adds space between this box and the bottom box */
+  display: flex;        
+  width: fit-content;    
+  margin-bottom: 20px;   
   padding: 10px;
   justify-content: center;
   align-items: center;
   gap: 10px;
   background: var(--Gradient-Beige-1, linear-gradient(90deg, #FFEFC4 0%, #FFD258 100%));
-  border:  2px solid #000;
+  border: 2px solid #000;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   z-index: 2;
 }
@@ -538,14 +518,14 @@ html, body {
   position: relative;
   top: -10px;
   right: -25px;
-  display: flex;         /* Changed from inline-flex */
-  width: fit-content;    /* Prevents the box from stretching */
+  display: flex;        
+  width: fit-content;    
   padding: 10px;
   justify-content: center;
   align-items: center;
   gap: 10px;
   background: var(--Gradient-Blue-2, linear-gradient(90deg, var(--Light-Blue, #97D7FF) 0%, var(--Blue, #4D8DBA) 100%));
-  border:  2px solid #000;
+  border: 2px solid #000;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   z-index: 2;
 }
@@ -559,20 +539,17 @@ html, body {
   line-height: normal;
 }
 
-
-/* Container holding BOTH cards side-by-side */
 .credentials-container {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: stretch; /* Forces both cards to match equal height */
+  align-items: stretch; 
   gap: 30px;
   width: 100%;
   max-width: 1100px;
   margin: 20px auto;
 }
 
-/* Base style for both cards */
 .credential-card {
   flex: 1;
   padding: 20px 25px;
@@ -581,7 +558,6 @@ html, body {
   z-index: 2;
 }
 
-/* Background Gradients */
 .card-organizations {
   background: var(--Gradient-Beige-1, linear-gradient(180deg, #FFEFC4 0%, #FFD258 100%));
 }
@@ -590,7 +566,6 @@ html, body {
   background: var(--Gradient-Blue-2, linear-gradient(180deg, var(--Light-Blue, #97D7FF) 0%, var(--Blue, #4D8DBA) 100%));
 }
 
-/* Titles */
 .card-title {
   text-align: center;
   font-family: "Barrio" !important;
@@ -602,21 +577,18 @@ html, body {
   line-height: 1;
 }
 
-/* Inner Vertical List */
 .card-list {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
 
-/* Individual Row Item */
 .card-item {
   display: flex;
   align-items: center;
   gap: 15px;
 }
 
-/* Logo Sizing */
 .item-logo1 {
   width: 55px;
   height: 55px;
@@ -636,9 +608,6 @@ html, body {
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-
-
-/* Item Text Typography */
 .item-text {
   display: flex;
   flex-direction: column;
@@ -662,48 +631,38 @@ html, body {
   margin: 0;
 }
 
-/* Italic styling for terms and sub-details */
 .item-text .term,
 .item-text .sub-detail {
   font-style: italic;
 }
 
-
-/* =========================================
-   EDUCATION CARD SPECIFIC OVERRIDES
-========================================= */
-
-/* 1. Increase spacing between PUP and TNHS */
 .card-education .card-list {
   gap: 28px;
 }
 
-/* 2. Increase spacing between the logos and text */
 .card-education .card-item {
   gap: 20px;
 }
 
-/* 3. Scale up the Education logos */
 .card-education .item-logo2 {
   width: 75px;
   height: 75px;
 }
 
-/* 4. Increase Education titles */
 .card-education .item-text h3 {
   font-size: 22px;
   margin-bottom: 4px;
 }
 
-/* 5. Increase Education body text */
 .card-education .item-text p {
   font-size: 20px;
   line-height: 1.3;
 }
 
-/* ==========================================
+
+/* ==========================================================================
    SECTION 3: INTERESTS
-   ========================================== */
+   ========================================================================== */
 
 #interests {
   background-repeat: no-repeat;                      
@@ -715,7 +674,6 @@ html, body {
   padding-top: 40px 20px 60px 20px;
 }
 
-/* Header Title Container (Stays in its top-left layout spot) */
 .interests-header {
   position: relative;
   display: flex;
@@ -727,7 +685,6 @@ html, body {
   left: -30%;
 }
 
-/* Handwritten Script Header ("dani's") */
 .header-script {
   position: relative;
   color: var(--Beige, #FFEFC4);
@@ -749,7 +706,6 @@ html, body {
   color: var(--Darkest-Blue, #013C55);
 }
 
-/* Main Bold Header ("pastime!") */
 .header-main {
   color: var(--Dark-Blue, #086288);
   font-family: "Arial Narrow" !important;
@@ -772,35 +728,30 @@ html, body {
   color: var(--Darkest-Blue, #013C55);
 }
 
-/* Cards Wrapper (Controls top spacing below header & side spacing) */
 .pastime-container {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: stretch;
-  gap: 30px; /* Spacing BETWEEN the two cards */
+  gap: 30px; 
   width: 100%;
   max-width: 1100px;
-  
-  /* SPACING CONTROL */
-  margin-top: 80px; /* Adjust this value to increase/decrease top gap between header & cards */
+  margin-top: 80px; 
   margin-left: auto;
   margin-right: auto;
 }
 
-/* Individual Large Cards */
 .pastime-card {
   flex: 1;
   background: var(--gradient-beige-blue-1, linear-gradient(180deg, var(--Beige, #FFEFC4) 0%, var(--Blue, #4D8DBA) 100%));
   border: 2px solid #000;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-  padding: 30px 30px 30px 30px;
+  padding: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-/* Handwritten Card Heading */
 .card-script-title {
   font-family: "La Belle Aurore" !important;
   font-size: 70px;
@@ -812,7 +763,6 @@ html, body {
   text-align: center;
 }
 
-/* 2x3 Grid inside each Card */
 .tiles-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -820,17 +770,15 @@ html, body {
   width: 100%;
 }
 
-/* Base Tile Styling */
 .pastime-tile {
   border: 2px solid #000;
   box-shadow: 0 3px 4px rgba(0, 0, 0, 0.25);
-  padding: 15px 15px;
+  padding: 15px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-/* Tile Gradients */
 .tile-blue {
   background: var(--Gradient-Blue-1, linear-gradient(90deg, var(--Dark-Blue, #086288) 0%, var(--Light-Blue, #97D7FF) 100%));
 }
@@ -839,7 +787,6 @@ html, body {
   background: var(--Gradient-Beige-1, linear-gradient(90deg, #FFEFC4 0%, #FFD258 100%));
 }
 
-/* Tile Text */
 .pastime-tile h3 {
   color: #000;
   font-family: "Arial Narrow" !important;
@@ -857,9 +804,10 @@ html, body {
   line-height: 1.1;
 }
 
-/* ==========================================
+
+/* ==========================================================================
    SECTION 4: PROJECTS
-   ========================================== */
+   ========================================================================== */
 
 #projects {
   background-repeat: no-repeat;                      
@@ -869,13 +817,10 @@ html, body {
   position: relative;
   justify-content: flex-start;
   padding: 40px 20px 60px 20px;
-
-  /* FIX FOR HORIZONTAL LINE / GAP BETWEEN SECTIONS */
-  margin-top: -1px; /* Overlaps section boundary to eliminate sub-pixel line gaps */
-  overflow: hidden; /* Prevents child margins from collapsing outside the section */
+  margin-top: -1px; 
+  overflow: hidden; 
 }
 
-/* Projects Header Container */
 .projects-header {
   position: relative;
   display: flex;
@@ -887,7 +832,6 @@ html, body {
   padding-right: 20px;
 }
 
-/* Handwritten Script Title Badge Box */
 .header-script-box {
   background-image: var(--linear-dbb, linear-gradient(180deg, var(--Blue, #4D8DBA) 0%, var(--Dark-Blue, #086288) 100%));
   border: 2px solid var(--Darkest-Blue, #013C55);
@@ -907,7 +851,6 @@ html, body {
   z-index: 1;
 }
 
-/* Main 'projects' Big Text Title */
 .header-main-projects {
   color: var(--Beige, #FFEFC4);
   font-family: "Arial Narrow" !important;
@@ -930,7 +873,6 @@ html, body {
   color: transparent;
 }
 
-/* 3-Column Cards Container */
 .projects-container {
   display: flex;
   flex-direction: row;
@@ -944,7 +886,6 @@ html, body {
   margin-right: auto;
 }
 
-/* Individual Card Frame */
 .project-card {
   flex: 1;
   background: var(--gradient-beige-blue-1, linear-gradient(180deg, var(--Beige, #FFEFC4) 0%, var(--Blue, #4D8DBA) 100%));
@@ -957,7 +898,6 @@ html, body {
   gap: 15px;
 }
 
-/* Outer Frame Box (Beige Gradient Border Area) */
 .project-image-box {
   width: 100%;
   height: 300px;
@@ -970,7 +910,6 @@ html, body {
   align-items: center;
 }
 
-/* Inner Frame Box (Contains the Image) */
 .project-image-inner {
   width: 100%;
   height: 100%;
@@ -986,7 +925,6 @@ html, body {
   object-fit: cover;
 }
 
-/* Title Box */
 .project-title-box {
   background: var(--Gradient-Blue-1, linear-gradient(90deg, var(--Dark-Blue, #086288) 0%, var(--Light-Blue, #97D7FF) 100%));
   border: 2px solid var(--Darkest-Blue, #013C55);
@@ -1010,7 +948,6 @@ html, body {
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
 }
 
-/* Pill Button */
 .project-btn {
   background: var(--Gradient-Beige-1, linear-gradient(90deg, #FFEFC4 0%, #FFD258 100%));
   border: 2px solid #000;
@@ -1023,13 +960,10 @@ html, body {
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-/* ==========================================
-   SECTION 5: CONTACT
-   ========================================== */
 
-/* ==========================================
+/* ==========================================================================
    SECTION 5: CONTACT
-   ========================================== */
+   ========================================================================== */
 
 #contact {
   background-repeat: no-repeat;                      
@@ -1039,10 +973,9 @@ html, body {
   position: relative;
   width: 100%;
   min-height: 100vh;
-  margin-top: -1px; /* Prevents section boundary gaps */
+  margin-top: -1px; 
 }
 
-/* Inner Container matching Section 1 structure */
 .contact-content {
   position: relative;
   z-index: 10;
@@ -1051,21 +984,19 @@ html, body {
   padding: 25px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Spreads content vertically across screen */
+  justify-content: space-between; 
   align-items: center;
 }
 
-/* Top Left Branding Logo Link */
 .contact-logo {
-  align-self: flex-start; /* Keeps it strictly in top-left placement */
+  align-self: flex-start; 
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  text-decoration: none; /* Removes hyperlink underline */
+  text-decoration: none; 
   cursor: pointer;
 }
 
-/* Center Section Header */
 .contact-header {
   display: flex;
   flex-direction: column;
@@ -1117,7 +1048,6 @@ html, body {
   color: transparent;
 }
 
-/* Glassmorphic 2x2 Social Media Box */
 .socials-box {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -1148,7 +1078,6 @@ html, body {
   object-fit: contain;
 }
 
-/* Bottom Navigation Bar */
 .contact-nav-bar {
   display: inline-flex;
   justify-content: center;
@@ -1169,7 +1098,6 @@ html, body {
   text-decoration: none;
 }
 
-/* Footer Copyright Script */
 .contact-footer p {
   color: var(--Beige, #FFEFC4);
   font-family: "La Belle Aurore" !important;

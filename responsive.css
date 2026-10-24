@@ -2,11 +2,17 @@
    MOBILE & TABLET RESPONSIVE STYLESHEET (responsive.css)
    ========================================================================== */
 
-/* Google Web Fonts Import (Handles custom fonts + mobile fallbacks) */
+/* Google Web Fonts Import */
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Barrio&family=La+Belle+Aurore&family=Roboto+Condensed:wght@400;700&display=swap');
 
+/* Base reset for menu controls across viewports */
+.menu-toggle-checkbox,
+.hamburger-btn {
+  display: none;
+}
+
 /* ==========================================================================
-   1. TABLET / IPAD STYLES (≤ 1024px)
+   1. TABLET / IPAD STYLES (≤ 1200px)
    ========================================================================== */
 @media screen and (max-width: 1200px) {
   
@@ -46,7 +52,7 @@
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    width: fit-content; /* Prevents text overflow */
+    width: fit-content;
     max-width: 100%;
     padding: 10px 25px;
     gap: 25px;
@@ -59,15 +65,6 @@
 
   .main-title {
     font-size: 70px;
-  }
-
-  .hero-collage {
-    min-height: 400px;
-    width: 100%;
-  }
-
-  .photo-top, .photo-bottom {
-    width: 300px;
   }
 
   /* Section 2: About */
@@ -146,30 +143,139 @@
    ========================================================================== */
 @media screen and (max-width: 768px) {
 
-  /* Section Padding */
-  .site-section {
-    padding: 40px 15px;
+  /* Global Mobile Shadow Removal */
+  *, ::before, ::after {
+    box-shadow: none !important;
+    text-shadow: none !important;
   }
 
-  /* Section 1: Homepage Header & Nav */
-  .portfolio-bar {
-    display: inline-flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    width: fit-content;
-    max-width: 100%;
-    height: auto;
+  /* Section Padding */
+  .site-section {
     padding: 10px 15px;
-    gap: 15px;
+  }
+
+  /* Section 1: Header Layout & Centered Logo */
+  .home-header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  .contact-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    margin: 0 auto;
+  }
+
+  .logo-text {
+    color: var(--Beige, #FFEFC4);
+    -webkit-text-stroke-color: var(--Darkest-Blue, #013C55);
+    font-family: "Caveat", cursive, sans-serif !important;
+    font-size: 42px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  .logo-text::before {
+    content: attr(data-text);
+    position: absolute;
+    z-index: -1; 
+    -webkit-text-stroke: 2px var(--Darkest-Blue, #013C55);
+    color: transparent; 
+  }
+
+  .logo-icon {
+    width: 32px;
+    height: auto;
+  }
+
+  /* --- HAMBURGER MENU CONTROLS --- */
+  .menu-toggle-checkbox {
+    display: none !important;
+  }
+
+  .hamburger-btn {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 28px;
+    height: 20px;
+    cursor: pointer;
+    z-index: 1001;
+  }
+
+  .hamburger-btn span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--Beige, #FFEFC4);
+    border-radius: 2px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  /* Animate Hamburger into 'X' when open */
+  .menu-toggle-checkbox:checked + .hamburger-btn span:nth-child(1) {
+    transform: translateY(8.5px) rotate(45deg);
+  }
+
+  .menu-toggle-checkbox:checked + .hamburger-btn span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle-checkbox:checked + .hamburger-btn span:nth-child(3) {
+    transform: translateY(-8.5px) rotate(-45deg);
+  }
+
+  /* --- HORIZONTAL NAVIGATION DRAWER --- */
+  .portfolio-bar {
+    display: none !important;            /* Default hidden state */
+    flex-direction: row !important;       /* Displays links in a horizontal row */
+    justify-content: space-evenly;
+    align-items: center;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: auto !important;
+    box-sizing: border-box;
+    background: var(--linear-dbb, linear-gradient(180deg, var(--Blue, #4D8DBA) 0%, var(--Dark-Blue, #086288) 100%));
+    border: 1px solid var(--Darkest-Blue, #013C55);
+    padding: 10px 8px;
+    gap: 8px;
+    z-index: 1000;
+  }
+
+  /* Reveal horizontal menu bar when checkbox is checked */
+  .menu-toggle-checkbox:checked ~ .portfolio-bar {
+    display: flex !important;
   }
 
   .bar-item {
-    font-size: 22px;
+    font-size: 18px !important;
+    padding: 4px 0;
+    white-space: nowrap;
+    color: var(--Beige, #FFEFC4);
+    text-decoration: none;
   }
 
+  .hero-details {
+    margin-top: 30px;
+    padding: 40px 0;
+  }
+
+  /* Hero Section Typography */
   .main-title {
-    font-size: 48px;
+    font-size: 60px;
   }
 
   .welcome, .space {
@@ -185,13 +291,115 @@
     padding: 8px 18px;
   }
 
-  /* Collage Elements Scaling */
-  .hero-collage {
-    min-height: 320px;
+  .hero-phrase {
+    font-size: 30px;
   }
 
-  .photo-top, .photo-bottom {
-    width: 220px;
+  .hero-phrase::before {
+    -webkit-text-stroke: 2px var(--Darkest-Blue, #013C55);
+  }
+
+  /* Scale down collage canvas & fit layout on mobile screens */
+  .hero-collage {
+    max-width: 330px !important;          /* Shrinks the entire canvas frame */
+    aspect-ratio: 500 / 520 !important;   /* Keeps the exact photo & asset proportions */
+    transform: scale(1);               /* Proportional scaling down for narrow phones */
+    transform-origin: center center;
+    margin: 0 auto;
+    margin-top: 25px;
+  }
+
+  /* Scale down child photos and decorations proportionally */
+  .photo-top,
+  .photo-bottom {
+    width: 250px !important;
+  }
+
+  .photo-top {
+    top: 10px !important;
+    left: 30px !important;
+    border: 3px solid var(--Beige, #FFEFC4);
+
+  }
+
+  .photo-bottom {
+    top: 130px !important;
+    left: 50px !important;
+    border: 3px solid var(--Beige, #FFEFC4);
+
+  }
+
+  /* Scale down individual decorations to match reduced photo sizes */
+  .deco-clip {
+    width: 80px !important;
+    top: -36px !important;
+    left: 120px !important;
+  }
+
+  .deco-blflowers-la {
+    width: 115px !important;
+    top: 70px !important;
+    left: -15px !important;
+  }
+
+  .deco-blflowers-lb {
+    width: 110px !important;
+    top: 95px !important;
+    left: 15px !important;
+  }
+
+  .deco-beflowers-la {
+    width: 70px !important;
+    top: 140px !important;
+    left: -10px !important;
+  }
+
+  .deco-beflowers-lb {
+    width: 65px !important;
+    top: 155px !important;
+    left: 20px !important;
+  }
+
+  .deco-blflowers-ra {
+    width: 110px !important;
+    top: 70px !important;
+    right: -15px !important;
+  }
+
+  .deco-blflowers-rb {
+    width: 140px !important;
+    top: -5px !important;
+    right: -20px !important;
+  }
+
+  .deco-beflowers-ra {
+    width: 70px !important;
+    top: 30px !important;
+    right: -15px !important;
+  }
+
+  .deco-beflowers-rb {
+    width: 65px !important;
+    top: 55px !important;
+    right: -15px !important;
+  }
+
+  .deco-tape-blue {
+    width: 100px !important;
+    bottom: 60px !important;
+    left: 15px !important;
+  }
+
+  .deco-tape-yellow {
+    width: 100px !important;
+    bottom: 65px !important;
+    right: -10px !important;
+  }
+
+  .deco-pin {
+    width: 30px !important;
+    top: 112px !important;
+    right: 130px !important;
   }
 
   /* Section 2: About */
