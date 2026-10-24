@@ -29,10 +29,16 @@
     font-family: "Roboto Condensed", Arial, sans-serif !important;
   }
 
+  /*Global Tablet & Ipad Shadow Removal*/
+  *, ::before, ::after {
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
   /*Section Heights & Spacing*/
   .site-section {
-    min-height: auto;
-    padding: 60px 20px;
+    min-height: 100vh;
+    padding: 10px 15px;
   }
 
   /*SECTION 1 HOMEPAGE*/
@@ -46,10 +52,14 @@
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    width: fit-content;
+    width: auto;
     max-width: 100%;
-    padding: 10px 25px;
-    gap: 25px;
+    padding: 8px 15px;
+    gap: 20px;
+  }
+
+  .bar-item {
+    font-size: 30px !important;
   }
 
   .hero-details {
@@ -61,7 +71,114 @@
     font-size: 70px;
   }
 
-  /*SECTION 2 ABOUT*/
+  /*Hero Collage Scaling*/
+  .hero-collage {
+    max-width: 330px !important;          
+    aspect-ratio: 600 / 700 !important;   
+    transform: scale(1);               
+    transform-origin: center center;
+    margin: 0 auto;
+    margin-top: 25px;
+  }
+
+   .hero-details {
+    margin-top: 20px;
+    padding: 40px 0;
+  }
+
+  /*Typography*/
+  .main-title {
+    font-size: 90px;
+  }
+
+  .welcome, .space {
+    font-size: 52px;
+  }
+
+  .role-banner h2 {
+    font-size: 35px;
+  }
+  .photo-top,
+  .photo-bottom {
+    width: 400px !important;
+    justify-content: center;
+  }
+
+  .photo-top {
+    top: 20px !important;
+    left: -50px !important;
+    border: 3px solid var(--Beige, #FFEFC4);
+  }
+
+  .photo-bottom {
+    top: 200px !important;
+    left: 0px !important;
+    border: 3px solid var(--Beige, #FFEFC4);
+  }
+
+  /*Hero Collage Decorations*/
+  .deco-clip {
+    top: -55px !important;
+    left: 100px !important;
+  }
+
+  .deco-blflowers-la {
+    top: 70px !important;
+    left: -100px !important;
+  }
+
+  .deco-blflowers-lb {
+    top: 110px !important;
+    left: -50px !important;
+  }
+
+  .deco-beflowers-la {
+    top: 180px !important;
+    left: -90px !important;
+  }
+
+  .deco-beflowers-lb {
+    top: 200px !important;
+    left: -50px !important;
+  }
+
+  .deco-blflowers-ra {
+    top: 100px !important;
+    right: -125px !important;
+  }
+
+  .deco-blflowers-rb {
+    top: 0px !important;
+    right: -120px !important;
+  }
+
+  .deco-beflowers-ra {
+    top: 50px !important;
+    right: -125px !important;
+  }
+
+  .deco-beflowers-rb {
+    top: 90px !important;
+    right: -125px !important;
+  }
+
+  .deco-tape-blue {
+    bottom: -50px !important;
+    left: -50px !important;
+  }
+
+  .deco-tape-yellow {
+    bottom: -50px !important;
+    right: -130px !important;
+  }
+
+  .deco-pin {
+    top: 112px !important;
+    right: 130px !important;
+  }
+
+
+/*SECTION 2 ABOUT*/
   #about {
     padding-top: 140px;
   }
@@ -71,8 +188,56 @@
     gap: 40px;
   }
 
+  .about-col-right {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    gap: 20px;
+    width: 100%;
+    max-width: 700px;
+  }
+
+  .info-box2,
+  .info-box3 {
+    flex: 1;
+    position: relative;
+    top: 0;
+    right: 0;
+    margin-bottom: 0;
+    width: auto;
+    height: auto;
+  }
+
   .credentials-container {
     flex-direction: column;
+  }
+  .info-box1, .info-box2, .info-box3 {
+    left: 0;
+    right: 0;
+    top: 0;
+    width: 100%;
+  }
+
+  .info-box1 {
+    position: relative;
+    display: inline-flex;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background: var(--gradient-beige-blue-1, linear-gradient(180deg, var(--Beige, #FFEFC4) 0%, var(--Blue, #4D8DBA) 100%));
+    border: 2px solid #000;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    z-index: 2;
+  }
+
+  .box-items1 {
+    font-size: 30px;
+  }
+
+  .box-items2 {
+    font-size: 25px;
   }
 
   /*SECTION 3 INTERESTS*/
@@ -110,6 +275,22 @@
     flex-direction: column;
     margin-top: 40px;
   }
+
+  .project-title-box h2 {
+    font-size: 60px;
+    -webkit-text-stroke: 0px;
+  }
+
+  .project-btn {
+  background: var(--Gradient-Beige-1, linear-gradient(90deg, #FFEFC4 0%, #FFD258 100%));
+  border: 2px solid #000;
+  border-radius: 25px;
+  color: #000;
+  font-size: 30px;
+  text-decoration: none;
+  padding: 6px 20px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
 
   /*SECTION 5 CONTACT*/
   .header-main-contact {
