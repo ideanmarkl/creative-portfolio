@@ -1,19 +1,17 @@
-/*GOOGLE WEB FONTS IMPORT*/
+/* GOOGLE WEB FONTS IMPORT */
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Barrio&family=La+Belle+Aurore&family=Roboto+Condensed:wght@400;700&display=swap');
 
-/*BASE RESET FOR MENU CONTROLS*/
+/* BASE RESET FOR MENU CONTROLS */
 .menu-toggle-checkbox,
 .hamburger-btn {
   display: none;
 }
 
 
-/* ==========================================================================
-   TABLET & IPAD STYLES (max-width: 1200px)
-   ========================================================================== */
+/* TABLET & IPAD STYLES (max-width: 1200px) */
 @media screen and (max-width: 1200px) {
 
-  /*Font Fallback Fix*/
+  /* Font Fallback Fix */
   .bar-item,
   .main-title,
   .btn,
@@ -32,20 +30,22 @@
     font-family: "Roboto Condensed", Arial, sans-serif !important;
   }
 
-  /*Global Shadow Removal (tablet and below)*/
+  /* Global Shadow Removal (tablet and below) */
   *, ::before, ::after {
     box-shadow: none !important;
     text-shadow: none !important;
   }
 
-  /*Section Heights & Spacing*/
+  /* Section Heights & Spacing */
   .site-section {
     min-height: 100vh;
     padding: 10px 15px;
   }
 
 
-  /*---------------- SECTION 1 HOMEPAGE ----------------*/
+  /* SECTION 1 HOMEPAGE (TABLET) */
+
+  /* Header & Navigation */
   .home-header {
     flex-direction: row;
     align-items: center;
@@ -66,13 +66,14 @@
     font-size: 30px !important;
   }
 
+  /* Hero Content Layout */
   .hero-details {
     flex-direction: column;
     margin-top: 20px;
     padding: 40px 0;
   }
 
-  /*Typography*/
+  /* Typography */
   .main-title {
     font-size: 90px;
   }
@@ -85,7 +86,7 @@
     font-size: 35px;
   }
 
-  /*Hero Collage Scaling*/
+  /* Hero Collage Scaling */
   .hero-collage {
     max-width: 330px !important;
     aspect-ratio: 600 / 700 !important;
@@ -113,7 +114,7 @@
     border: 3px solid var(--Beige, #FFEFC4);
   }
 
-  /*Hero Collage Decorations*/
+  /* Hero Collage Decorations */
   .deco-clip {
     top: -55px !important;
     left: 100px !important;
@@ -175,7 +176,8 @@
   }
 
 
-  /*---------------- SECTION 2 ABOUT ----------------*/
+  /* SECTION 2 ABOUT (TABLET) */
+
   #about {
     min-height: auto;
     padding-top: 140px;
@@ -188,7 +190,7 @@
     gap: 28px;
   }
 
-  /*Left + right columns become centered rows of fit-content boxes*/
+  /* Left + right columns become centered rows of fit-content boxes */
   .about-col-left,
   .about-col-right {
     display: flex;
@@ -201,7 +203,7 @@
     max-width: 700px;
   }
 
-  /*Info boxes: inline-flex, sized to their own text (not stretched)*/
+  /* Info boxes: inline-flex, sized to their own text (not stretched) */
   .info-box1,
   .info-box2,
   .info-box3 {
@@ -227,7 +229,7 @@
     font-size: 24px;
   }
 
-  /*Credential cards stack and stay compact*/
+  /* Credential cards stack and stay compact */
   .credentials-container {
     flex-direction: column;
     align-items: center;
@@ -277,7 +279,7 @@
     line-height: 1.2;
   }
 
-  /*Education overrides (match the desktop selectors so they actually win)*/
+  /* Education overrides (match the desktop selectors so they actually win) */
   .card-education .card-list {
     gap: 16px;
   }
@@ -302,12 +304,14 @@
   }
 
 
-  /*---------------- SECTION 3 INTERESTS ----------------*/
+  /* SECTION 3 INTERESTS (TABLET) */
+
   #interests {
     justify-content: flex-start;
     padding: 40px 15px 50px 15px;
   }
 
+  /* Interests Title Header */
   .interests-header {
     align-items: center;
     max-width: 100%;
@@ -324,6 +328,7 @@
     font-size: 100px;
   }
 
+  /* Pastimes Cards Container */
   .pastime-container {
     flex-direction: column;
     align-items: center;
@@ -343,6 +348,7 @@
     margin-bottom: 16px;
   }
 
+  /* Pastime Tiles */
   .tiles-grid {
     gap: 12px 16px;
   }
@@ -360,12 +366,14 @@
   }
 
 
-  /*---------------- SECTION 4 PROJECTS ----------------*/
+  /* SECTION 4 PROJECTS (TABLET) */
+
   #projects {
     justify-content: flex-start;
     padding: 40px 15px 50px 15px;
   }
 
+  /* Projects Title Header */
   .projects-header {
     align-items: center;
     padding-right: 0;
@@ -386,6 +394,7 @@
     text-align: center;
   }
 
+  /* Projects Cards Container */
   .projects-container {
     flex-direction: column;
     align-items: center;
@@ -421,7 +430,8 @@
   }
 
 
-  /*---------------- SECTION 5 CONTACT ----------------*/
+  /* SECTION 5 CONTACT (TABLET) */
+
   .header-main-contact {
     font-size: 90px;
   }
@@ -431,6 +441,7 @@
     margin-bottom: -25px;
   }
 
+  /* Bottom Navigation Bar */
   .contact-nav-bar {
     display: inline-flex;
     justify-content: center;
@@ -443,18 +454,18 @@
 }
 
 
-/* ==========================================================================
-   MOBILE & PHONE STYLES (max-width: 768px)
-   ========================================================================== */
+/* MOBILE & PHONE STYLES (max-width: 768px) */
 @media screen and (max-width: 768px) {
 
-  /*Section Padding*/
+  /* Section Padding */
   .site-section {
     padding: 10px 12px;
   }
 
 
-  /*---------------- SECTION 1 HOMEPAGE ----------------*/
+  /* SECTION 1 HOMEPAGE (MOBILE) */
+
+  /* Header & Navigation */
   .home-header {
     position: relative;
     display: flex;
@@ -495,7 +506,7 @@
     height: auto;
   }
 
-  /*Hamburger Menu Controls*/
+  /* Hamburger Menu Controls */
   .menu-toggle-checkbox {
     display: none !important;
   }
@@ -535,8 +546,8 @@
     transform: translateY(-8.5px) rotate(-45deg);
   }
 
-  /*Horizontal Navigation Drawer*/
-  /*Always rendered (so it can animate), just hidden until the toggle is checked*/
+  /* Horizontal Navigation Drawer */
+  /* Always rendered (so it can animate), just hidden until the toggle is checked */
   .portfolio-bar {
     display: flex !important;
     flex-direction: row !important;
@@ -554,7 +565,7 @@
     gap: 8px;
     z-index: 1000;
 
-    /*Closed state*/
+    /* Closed state */
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
@@ -567,12 +578,12 @@
                 visibility 0s linear 0.4s;
   }
 
-  /*Cancel the desktop hover-scale so it can't fight the slide animation*/
+  /* Cancel the desktop hover-scale so it can't fight the slide animation */
   .portfolio-bar:hover {
     transform: none;
   }
 
-  /*Open state*/
+  /* Open state */
   .menu-toggle-checkbox:checked ~ .portfolio-bar {
     opacity: 1;
     visibility: visible;
@@ -592,25 +603,26 @@
     color: var(--Beige, #FFEFC4);
     text-decoration: none;
 
-    /*Links fade out fast when closing*/
+    /* Links fade out fast when closing */
     opacity: 0;
     translate: 0 -6px;
     transition: opacity 0.2s ease, translate 0.2s ease;
   }
 
-  /*All links fade/slide in together with the bar*/
+  /* All links fade/slide in together with the bar */
   .menu-toggle-checkbox:checked ~ .portfolio-bar .bar-item {
     opacity: 1;
     translate: 0 0;
     transition: opacity 0.35s ease, translate 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
   }
 
+  /* Hero Content Layout */
   .hero-details {
     margin-top: 30px;
     padding: 40px 0;
   }
 
-  /*Typography*/
+  /* Typography */
   .main-title {
     font-size: 60px;
   }
@@ -636,7 +648,7 @@
     -webkit-text-stroke: 2px var(--Darkest-Blue, #013C55);
   }
 
-  /*Hero Collage Scaling*/
+  /* Hero Collage Scaling */
   .hero-collage {
     max-width: 330px !important;
     aspect-ratio: 600 / 500 !important;
@@ -663,7 +675,7 @@
     border: 3px solid var(--Beige, #FFEFC4);
   }
 
-  /*Hero Collage Decorations*/
+  /* Hero Collage Decorations */
   .deco-clip {
     width: 80px !important;
     top: -36px !important;
@@ -737,13 +749,14 @@
   }
 
 
-  /*---------------- SECTION 2 ABOUT ----------------*/
+  /* SECTION 2 ABOUT (MOBILE) */
+
   #about {
     padding-top: 100px;
     padding-bottom: 30px;
   }
 
-  /*Banner label scales down with the banner*/
+  /* Banner label scales down with the banner */
   .header-bar {
     top: 14px;
     left: 12px;
@@ -765,7 +778,7 @@
     max-width: 100%;
   }
 
-  /*Info boxes: inline-flex, hug their text, capped so they never fill the screen*/
+  /* Info boxes: inline-flex, hug their text, capped so they never fill the screen */
   .info-box1,
   .info-box2,
   .info-box3 {
@@ -776,7 +789,7 @@
     border-width: 2px;
   }
 
-  /*Let the text wrap naturally instead of using the desktop line breaks*/
+  /* Let the text wrap naturally instead of using the desktop line breaks */
   .box-items1 br,
   .box-items2 br {
     display: none;
@@ -792,7 +805,7 @@
     line-height: 1.2;
   }
 
-  /*Photo collage*/
+  /* Photo collage */
   .about-col-center {
     max-width: 320px !important;
     aspect-ratio: 600 / 300 !important;
@@ -832,7 +845,7 @@
     width: 65px !important;
   }
 
-  /*Credential cards: compact*/
+  /* Credential cards: compact */
   .credentials-container {
     gap: 14px;
     margin: 6px auto;
@@ -874,6 +887,7 @@
     line-height: 1.2;
   }
 
+  /* Education Card Overrides */
   .card-education .card-list {
     gap: 12px;
   }
@@ -898,11 +912,13 @@
   }
 
 
-  /*---------------- SECTION 3 INTERESTS ----------------*/
+  /* SECTION 3 INTERESTS (MOBILE) */
+
   #interests {
     padding: 30px 12px 40px 12px;
   }
 
+  /* Interests Title Header */
   .interests-header {
     align-items: center;
     padding-left: 0;
@@ -919,6 +935,7 @@
     line-height: 1;
   }
 
+  /* Pastimes Cards Container */
   .pastime-container {
     gap: 14px;
     margin-top: 28px;
@@ -935,7 +952,7 @@
     margin-bottom: 10px;
   }
 
-  /*Keep two columns on phones so the tiles stay small*/
+  /* Keep two columns on phones so the tiles stay small */
   .tiles-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 8px;
@@ -957,11 +974,13 @@
   }
 
 
-  /*---------------- SECTION 4 PROJECTS ----------------*/
+  /* SECTION 4 PROJECTS (MOBILE) */
+
   #projects {
     padding: 30px 12px 40px 12px;
   }
 
+  /* Projects Title Header */
   .header-script-box {
     padding: 3px 12px;
     margin-bottom: -22px;
@@ -976,6 +995,7 @@
     line-height: 1;
   }
 
+  /* Projects Cards Container */
   .projects-container {
     gap: 14px;
     margin-top: 28px;
@@ -1011,7 +1031,9 @@
   }
 
 
-  /*---------------- SECTION 5 CONTACT ----------------*/
+  /* SECTION 5 CONTACT (MOBILE) */
+
+  /* Contact Title Header */
   .header-script-contact {
     font-size: 36px;
     margin-bottom: -10px;
@@ -1022,6 +1044,7 @@
     line-height: 1;
   }
 
+  /* Social Media Links */
   .socials-box {
     gap: 15px;
     padding: 20px;
@@ -1031,6 +1054,7 @@
     font-size: 24px;
   }
 
+  /* Bottom Navigation Bar */
   .contact-nav-bar {
     display: inline-flex;
     flex-wrap: wrap;
@@ -1047,6 +1071,7 @@
     font-size: 20px;
   }
 
+  /* Footer Copyright */
   .contact-footer p {
     font-size: 18px;
   }

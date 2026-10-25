@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-  // 1. FLOWER COVER: CLICK / TAP / ENTER / SPACE TO REVEAL THE SITE
+  // 1. FLOWER COVER
   const cover = document.getElementById('cover');
 
   if (cover) {
@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 3. DYNAMIC RADIAL SPOTLIGHT (DESKTOP MOUSE FOLLOW)
+  // 3. DYNAMIC RADIAL SPOTLIGHT
   window.addEventListener('mousemove', (e) => {
     document.documentElement.style.setProperty('--mouse-x', `${e.clientX}px`);
     document.documentElement.style.setProperty('--mouse-y', `${e.clientY}px`);
