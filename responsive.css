@@ -7,9 +7,12 @@
   display: none;
 }
 
-/*TABLET & IPAD STYLES*/
+
+/* ==========================================================================
+   TABLET & IPAD STYLES (max-width: 1200px)
+   ========================================================================== */
 @media screen and (max-width: 1200px) {
-  
+
   /*Font Fallback Fix*/
   .bar-item,
   .main-title,
@@ -29,7 +32,7 @@
     font-family: "Roboto Condensed", Arial, sans-serif !important;
   }
 
-  /*Global Tablet & Ipad Shadow Removal*/
+  /*Global Shadow Removal (tablet and below)*/
   *, ::before, ::after {
     box-shadow: none !important;
     text-shadow: none !important;
@@ -41,7 +44,8 @@
     padding: 10px 15px;
   }
 
-  /*SECTION 1 HOMEPAGE*/
+
+  /*---------------- SECTION 1 HOMEPAGE ----------------*/
   .home-header {
     flex-direction: row;
     align-items: center;
@@ -64,24 +68,6 @@
 
   .hero-details {
     flex-direction: column;
-    padding: 20px 0;
-  }
-
-  .main-title {
-    font-size: 70px;
-  }
-
-  /*Hero Collage Scaling*/
-  .hero-collage {
-    max-width: 330px !important;          
-    aspect-ratio: 600 / 700 !important;   
-    transform: scale(1);               
-    transform-origin: center center;
-    margin: 0 auto;
-    margin-top: 25px;
-  }
-
-   .hero-details {
     margin-top: 20px;
     padding: 40px 0;
   }
@@ -98,6 +84,17 @@
   .role-banner h2 {
     font-size: 35px;
   }
+
+  /*Hero Collage Scaling*/
+  .hero-collage {
+    max-width: 330px !important;
+    aspect-ratio: 600 / 700 !important;
+    transform: scale(1);
+    transform-origin: center center;
+    margin: 0 auto;
+    margin-top: 25px;
+  }
+
   .photo-top,
   .photo-bottom {
     width: 400px !important;
@@ -178,71 +175,144 @@
   }
 
 
-/*SECTION 2 ABOUT*/
+  /*---------------- SECTION 2 ABOUT ----------------*/
   #about {
+    min-height: auto;
     padding-top: 140px;
+    padding-bottom: 40px;
   }
 
   .about-details-grid {
     flex-direction: column;
-    gap: 40px;
+    align-items: center;
+    gap: 28px;
   }
 
+  /*Left + right columns become centered rows of fit-content boxes*/
+  .about-col-left,
   .about-col-right {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
-    align-items: stretch;
-    gap: 20px;
+    align-items: center;
+    gap: 14px;
     width: 100%;
     max-width: 700px;
   }
 
+  /*Info boxes: inline-flex, sized to their own text (not stretched)*/
+  .info-box1,
   .info-box2,
   .info-box3 {
-    flex: 1;
     position: relative;
     top: 0;
-    right: 0;
-    margin-bottom: 0;
-    width: auto;
-    height: auto;
-  }
-
-  .credentials-container {
-    flex-direction: column;
-  }
-  .info-box1, .info-box2, .info-box3 {
     left: 0;
     right: 0;
-    top: 0;
-    width: 100%;
-  }
-
-  .info-box1 {
-    position: relative;
     display: inline-flex;
-    padding: 10px;
     justify-content: center;
     align-items: center;
-    gap: 10px;
-    background: var(--gradient-beige-blue-1, linear-gradient(180deg, var(--Beige, #FFEFC4) 0%, var(--Blue, #4D8DBA) 100%));
-    border: 2px solid #000;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-    z-index: 2;
+    width: fit-content;
+    max-width: 100%;
+    margin: 0;
+    padding: 10px 16px;
+    text-align: center;
   }
 
   .box-items1 {
-    font-size: 30px;
+    font-size: 28px;
   }
 
   .box-items2 {
-    font-size: 25px;
+    font-size: 24px;
   }
 
-  /*SECTION 3 INTERESTS*/
-  .header-main {
-    font-size: 100px;
+  /*Credential cards stack and stay compact*/
+  .credentials-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    max-width: 700px;
+    margin: 10px auto;
+  }
+
+  .credential-card {
+    width: 100%;
+    padding: 16px 20px;
+  }
+
+  .card-title {
+    font-size: 34px;
+    margin-bottom: 14px;
+  }
+
+  .card-list {
+    gap: 12px;
+  }
+
+  .card-item {
+    gap: 12px;
+  }
+
+  .item-logo1 {
+    width: 46px;
+    height: 46px;
+  }
+
+  .item-logo2 {
+    width: 46px;
+    height: 46px;
+  }
+
+  .item-text {
+    min-width: 0;
+  }
+
+  .item-text h3 {
+    font-size: 19px;
+  }
+
+  .item-text p {
+    font-size: 17px;
+    line-height: 1.2;
+  }
+
+  /*Education overrides (match the desktop selectors so they actually win)*/
+  .card-education .card-list {
+    gap: 16px;
+  }
+
+  .card-education .card-item {
+    gap: 12px;
+  }
+
+  .card-education .item-logo2 {
+    width: 56px;
+    height: 56px;
+  }
+
+  .card-education .item-text h3 {
+    font-size: 19px;
+    margin-bottom: 2px;
+  }
+
+  .card-education .item-text p {
+    font-size: 17px;
+    line-height: 1.2;
+  }
+
+
+  /*---------------- SECTION 3 INTERESTS ----------------*/
+  #interests {
+    justify-content: flex-start;
+    padding: 40px 15px 50px 15px;
+  }
+
+  .interests-header {
+    align-items: center;
+    max-width: 100%;
+    padding-left: 0;
+    left: 0;
   }
 
   .header-script {
@@ -250,12 +320,52 @@
     margin-bottom: -30px;
   }
 
+  .header-main {
+    font-size: 100px;
+  }
+
   .pastime-container {
     flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    max-width: 620px;
     margin-top: 40px;
   }
 
-  /*SECTION 4 PROJECTS*/
+  .pastime-card {
+    flex: 0 0 auto;
+    width: 100%;
+    padding: 20px;
+  }
+
+  .card-script-title {
+    font-size: 54px;
+    margin-bottom: 16px;
+  }
+
+  .tiles-grid {
+    gap: 12px 16px;
+  }
+
+  .pastime-tile {
+    padding: 10px 12px;
+  }
+
+  .pastime-tile h3 {
+    font-size: 20px;
+  }
+
+  .pastime-tile p {
+    font-size: 16px;
+  }
+
+
+  /*---------------- SECTION 4 PROJECTS ----------------*/
+  #projects {
+    justify-content: flex-start;
+    padding: 40px 15px 50px 15px;
+  }
+
   .projects-header {
     align-items: center;
     padding-right: 0;
@@ -264,6 +374,11 @@
   .header-script-box {
     margin-right: 0;
     margin-bottom: -30px;
+    padding: 5px 20px;
+  }
+
+  .header-script-projects {
+    font-size: 45px;
   }
 
   .header-main-projects {
@@ -273,26 +388,40 @@
 
   .projects-container {
     flex-direction: column;
+    align-items: center;
+    gap: 20px;
     margin-top: 40px;
   }
 
+  .project-card {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 400px;
+    padding: 14px;
+    gap: 12px;
+  }
+
+  .project-image-box {
+    height: 220px;
+    padding: 8px;
+  }
+
+  .project-title-box {
+    padding: 6px 12px;
+  }
+
   .project-title-box h2 {
-    font-size: 60px;
+    font-size: 36px;
     -webkit-text-stroke: 0px;
   }
 
   .project-btn {
-  background: var(--Gradient-Beige-1, linear-gradient(90deg, #FFEFC4 0%, #FFD258 100%));
-  border: 2px solid #000;
-  border-radius: 25px;
-  color: #000;
-  font-size: 30px;
-  text-decoration: none;
-  padding: 6px 20px;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-}
+    font-size: 24px;
+    padding: 5px 18px;
+  }
 
-  /*SECTION 5 CONTACT*/
+
+  /*---------------- SECTION 5 CONTACT ----------------*/
   .header-main-contact {
     font-size: 90px;
   }
@@ -313,21 +442,19 @@
   }
 }
 
-/*MOBILE & PHONE STYLES*/
-@media screen and (max-width: 768px) {
 
-  /*Global Mobile Shadow Removal*/
-  *, ::before, ::after {
-    box-shadow: none !important;
-    text-shadow: none !important;
-  }
+/* ==========================================================================
+   MOBILE & PHONE STYLES (max-width: 768px)
+   ========================================================================== */
+@media screen and (max-width: 768px) {
 
   /*Section Padding*/
   .site-section {
-    padding: 10px 15px;
+    padding: 10px 12px;
   }
 
-  /*SECTION 1 HOMEPAGE*/
+
+  /*---------------- SECTION 1 HOMEPAGE ----------------*/
   .home-header {
     position: relative;
     display: flex;
@@ -358,9 +485,9 @@
   .logo-text::before {
     content: attr(data-text);
     position: absolute;
-    z-index: -1; 
+    z-index: -1;
     -webkit-text-stroke: 2px var(--Darkest-Blue, #013C55);
-    color: transparent; 
+    color: transparent;
   }
 
   .logo-icon {
@@ -409,9 +536,10 @@
   }
 
   /*Horizontal Navigation Drawer*/
+  /*Always rendered (so it can animate), just hidden until the toggle is checked*/
   .portfolio-bar {
-    display: none !important;            
-    flex-direction: row !important;       
+    display: flex !important;
+    flex-direction: row !important;
     justify-content: space-evenly;
     align-items: center;
     position: absolute;
@@ -425,10 +553,36 @@
     padding: 10px 8px;
     gap: 8px;
     z-index: 1000;
+
+    /*Closed state*/
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    translate: 0 -14px;
+    scale: 1 0.85;
+    transform-origin: top center;
+    transition: opacity 0.35s ease,
+                translate 0.4s cubic-bezier(0.22, 0.61, 0.36, 1),
+                scale 0.4s cubic-bezier(0.22, 0.61, 0.36, 1),
+                visibility 0s linear 0.4s;
   }
 
+  /*Cancel the desktop hover-scale so it can't fight the slide animation*/
+  .portfolio-bar:hover {
+    transform: none;
+  }
+
+  /*Open state*/
   .menu-toggle-checkbox:checked ~ .portfolio-bar {
-    display: flex !important;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    translate: 0 0;
+    scale: 1 1;
+    transition: opacity 0.35s ease,
+                translate 0.4s cubic-bezier(0.22, 0.61, 0.36, 1),
+                scale 0.4s cubic-bezier(0.22, 0.61, 0.36, 1),
+                visibility 0s linear 0s;
   }
 
   .bar-item {
@@ -437,6 +591,18 @@
     white-space: nowrap;
     color: var(--Beige, #FFEFC4);
     text-decoration: none;
+
+    /*Links fade out fast when closing*/
+    opacity: 0;
+    translate: 0 -6px;
+    transition: opacity 0.2s ease, translate 0.2s ease;
+  }
+
+  /*All links fade/slide in together with the bar*/
+  .menu-toggle-checkbox:checked ~ .portfolio-bar .bar-item {
+    opacity: 1;
+    translate: 0 0;
+    transition: opacity 0.35s ease, translate 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
   }
 
   .hero-details {
@@ -472,9 +638,9 @@
 
   /*Hero Collage Scaling*/
   .hero-collage {
-    max-width: 330px !important;          
-    aspect-ratio: 600 / 500 !important;   
-    transform: scale(1);               
+    max-width: 330px !important;
+    aspect-ratio: 600 / 500 !important;
+    transform: scale(1);
     transform-origin: center center;
     margin: 0 auto;
     margin-top: 25px;
@@ -570,21 +736,67 @@
     right: 130px !important;
   }
 
-  /*SECTION 2 ABOUT*/
+
+  /*---------------- SECTION 2 ABOUT ----------------*/
   #about {
     padding-top: 100px;
+    padding-bottom: 30px;
+  }
+
+  /*Banner label scales down with the banner*/
+  .header-bar {
+    top: 14px;
+    left: 12px;
+    padding: 0 8px;
+  }
+
+  .bar-items2 {
+    font-size: 20px;
   }
 
   .about-details-grid {
-    flex-direction: column;
-    gap: 20px;
-    align-items: center;
+    gap: 18px;
   }
 
+  .about-col-left,
+  .about-col-right {
+    flex-direction: column;
+    gap: 10px;
+    max-width: 100%;
+  }
+
+  /*Info boxes: inline-flex, hug their text, capped so they never fill the screen*/
+  .info-box1,
+  .info-box2,
+  .info-box3 {
+    display: inline-flex;
+    width: fit-content;
+    max-width: 290px;
+    padding: 8px 12px;
+    border-width: 2px;
+  }
+
+  /*Let the text wrap naturally instead of using the desktop line breaks*/
+  .box-items1 br,
+  .box-items2 br {
+    display: none;
+  }
+
+  .box-items1 {
+    font-size: 18px;
+    line-height: 1.2;
+  }
+
+  .box-items2 {
+    font-size: 16px;
+    line-height: 1.2;
+  }
+
+  /*Photo collage*/
   .about-col-center {
-    max-width: 320px !important;        
-    aspect-ratio: 600 / 300 !important;  
-    margin: 10px auto;
+    max-width: 320px !important;
+    aspect-ratio: 600 / 300 !important;
+    margin: 10px auto 30px;
   }
 
   .about-photo {
@@ -620,36 +832,77 @@
     width: 65px !important;
   }
 
-  .info-box1, .info-box2, .info-box3 {
-    left: 0;
-    right: 0;
-    top: 0;
-    width: 100%;
+  /*Credential cards: compact*/
+  .credentials-container {
+    gap: 14px;
+    margin: 6px auto;
   }
 
-  .info-box1 {
-    position: relative;
-    display: inline-flex;
-    padding: 10px;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    background: var(--gradient-beige-blue-1, linear-gradient(180deg, var(--Beige, #FFEFC4) 0%, var(--Blue, #4D8DBA) 100%));
-    border: 2px solid #000;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-    z-index: 2;
-  }
-
-  .box-items1, .box-items2 {
-    font-size: 20px;
+  .credential-card {
+    padding: 12px 12px;
+    border-width: 2px;
   }
 
   .card-title {
-    top: 100px;
-    font-size: 30px;
+    font-size: 24px;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
   }
 
-  /*SECTION 3 INTERESTS*/
+  .card-list {
+    gap: 10px;
+  }
+
+  .card-item {
+    gap: 10px;
+  }
+
+  .item-logo1,
+  .item-logo2 {
+    width: 34px;
+    height: 34px;
+    border-width: 1.5px;
+  }
+
+  .item-text h3 {
+    font-size: 14px;
+    line-height: 1.15;
+  }
+
+  .item-text p {
+    font-size: 12px;
+    line-height: 1.2;
+  }
+
+  .card-education .card-list {
+    gap: 12px;
+  }
+
+  .card-education .card-item {
+    gap: 10px;
+  }
+
+  .card-education .item-logo2 {
+    width: 42px;
+    height: 42px;
+  }
+
+  .card-education .item-text h3 {
+    font-size: 14px;
+    margin-bottom: 1px;
+  }
+
+  .card-education .item-text p {
+    font-size: 12px;
+    line-height: 1.2;
+  }
+
+
+  /*---------------- SECTION 3 INTERESTS ----------------*/
+  #interests {
+    padding: 30px 12px 40px 12px;
+  }
+
   .interests-header {
     align-items: center;
     padding-left: 0;
@@ -657,60 +910,108 @@
   }
 
   .header-script {
-    font-size: 48px;
-    margin-bottom: -20px;
+    font-size: 42px;
+    margin-bottom: -22px;
   }
 
   .header-main {
-    font-size: 60px;
+    font-size: 56px;
     line-height: 1;
+  }
+
+  .pastime-container {
+    gap: 14px;
+    margin-top: 28px;
+    max-width: 100%;
+  }
+
+  .pastime-card {
+    padding: 12px 10px;
+    border-width: 2px;
   }
 
   .card-script-title {
-    font-size: 40px;
+    font-size: 34px;
+    margin-bottom: 10px;
   }
 
+  /*Keep two columns on phones so the tiles stay small*/
   .tiles-grid {
-    grid-template-columns: 1fr;
-    gap: 12px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .pastime-tile {
+    padding: 7px 9px;
+    border-width: 1.5px;
   }
 
   .pastime-tile h3 {
-    font-size: 18px;
+    font-size: 14px;
+    line-height: 1.1;
   }
 
   .pastime-tile p {
-    font-size: 15px;
+    font-size: 12px;
+    line-height: 1.1;
   }
 
-  /*SECTION 4 PROJECTS*/
-  .header-script-projects {
-    font-size: 30px;
+
+  /*---------------- SECTION 4 PROJECTS ----------------*/
+  #projects {
+    padding: 30px 12px 40px 12px;
   }
 
   .header-script-box {
-    padding: 5px 15px;
+    padding: 3px 12px;
+    margin-bottom: -22px;
+  }
+
+  .header-script-projects {
+    font-size: 26px;
   }
 
   .header-main-projects {
-    font-size: 60px;
+    font-size: 52px;
     line-height: 1;
   }
 
+  .projects-container {
+    gap: 14px;
+    margin-top: 28px;
+  }
+
+  .project-card {
+    max-width: 280px;
+    padding: 10px;
+    gap: 8px;
+    border-width: 2px;
+  }
+
   .project-image-box {
-    height: 220px;
+    height: 150px;
+    padding: 6px;
+    border-width: 1.5px;
+  }
+
+  .project-title-box {
+    padding: 4px 10px;
+    border-width: 1.5px;
   }
 
   .project-title-box h2 {
-    font-size: 30px;
+    font-size: 22px;
     -webkit-text-stroke: 0px;
   }
 
   .project-btn {
-    font-size: 18px;
+    font-size: 15px;
+    padding: 4px 14px;
+    border-width: 1.5px;
   }
 
-  /*SECTION 5 CONTACT*/
+
+  /*---------------- SECTION 5 CONTACT ----------------*/
   .header-script-contact {
     font-size: 36px;
     margin-bottom: -10px;
