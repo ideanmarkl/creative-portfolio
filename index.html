@@ -7,8 +7,16 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="responsive.css">
   <link rel="icon" type="image/png" href="globe_icon.png">
+  <link rel="preload" as="image" href="cover_flower.png">
 </head>
-<body>
+<body class="cover-active">
+
+  <!--Flower Cover (click to reveal the site)-->
+  <div id="cover" class="cover" role="button" tabindex="0" aria-label="Click to enter the portfolio">
+    <img src="cover_flower.png" alt="" class="cover-flower">
+    <span class="cover-hint">click to see dani!</span>
+  </div>
+  <noscript><style>#cover { display: none !important; } body.cover-active { overflow: auto !important; }</style></noscript>
 
   <!--Homepage Section-->
   <section id="homepage" class="site-section">
